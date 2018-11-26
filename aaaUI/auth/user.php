@@ -71,7 +71,7 @@ include 'Employee.php';
 			if($result -> getUserType($username, $password) == 'Admin')
 			{
 				session_start();		
-				header('Location: ../Admin/chartOfAccounts.php/');
+				header('Location: ../Admin/chartOfAccounts.php');
 				echo 'You have successfully logged in';
 				exit();
 				
@@ -80,13 +80,13 @@ include 'Employee.php';
 			else if($result -> getUserType($username, $password) == 'Manager')
 			{
 				session_start();
-				header('Location: ../Manager/chartOfAccounts.php/');
+				header('Location: ../Manager/chartOfAccounts.php');
 				exit();
 			}
 			else if($result -> getUserType($username, $password) == 'Regular')
 			{
 				session_start();
-				header('Location: ../standard/chartOfAccounts.php/');
+				header('Location: ../standard/chartOfAccounts.php');
 				exit();
 			}
 			else 
