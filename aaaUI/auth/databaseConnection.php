@@ -3,10 +3,10 @@
 
   	$object = new Configuration;
 
-  	$object -> setHostName('localhost');
-  	$object -> setHostUserName('root');
-  	$object -> setHostPassword('');
-  	$object -> setDatabaseName('aaadb');
+  	$object -> setHostName('den1.mysql1.gear.host');
+  	$object -> setHostUserName('accudb');
+  	$object -> setHostPassword('Sm2v5W9?4-24');
+  	$object -> setDatabaseName('accudb');
 
   	$serverName = $object -> getHostName();
   	$userName = $object->getHostUserName();

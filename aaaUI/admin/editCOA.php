@@ -24,10 +24,10 @@ $Status= filter_input(INPUT_POST,'Status');
 
 
 
-        $host="localhost";
-        $dbusername ="root";
-        $dbpassword = "";
-        $dbname ="aaadb";
+        $host="den1.mysql1.gear.host";
+        $dbusername ="accudb";
+        $dbpassword = "Sm2v5W9?4-24";
+        $dbname ="accudb";
 
 // Create connection
        $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);

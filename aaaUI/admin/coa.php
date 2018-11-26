@@ -16,7 +16,7 @@ if(!empty($AcctName)){
 
     
 // Create connection
- $conn = mysqli_connect("localhost", "root", "", "aaadb");
+ $conn = mysqli_connect("den1.mysql1.gear.host", "accudb", "Sm2v5W9?4-24", "accudb");
 if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }

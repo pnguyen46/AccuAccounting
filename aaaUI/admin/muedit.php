@@ -10,10 +10,11 @@ $Occupation =filter_input(INPUT_POST,'Occupation');
 $Status= filter_input(INPUT_POST,'Status');
 $empId = filter_input(INPUT_POST, 'EmpId');
 
-$host="localhost";
-$dbusername ="root";
-$dbpassword = "";
-$dbname ="aaadb";
+
+$host="lden1.mysql1.gear.host";
+$dbusername ="accudb";
+$dbpassword = "Sm2v5W9?4-24";
+$dbname ="accudb";
 
 // Create connection
 $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);

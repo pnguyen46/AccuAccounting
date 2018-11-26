@@ -193,12 +193,14 @@ include '../auth/databaseConnection.php'
                 <!--                                                      Add your code here                                         -->
         <div>
             <?php
-            $host="localhost";
-            $dbusername ="root";
-            $dbpassword = "";
-            $dbname ="aaadb";
+            $host="den1.mysql1.gear.host";
+            $dbusername ="accudb";
+            $dbpassword = "Sm2v5W9?4-24";
+            $dbname ="accudb";
             $occupation = array('Admin', 'Manager', 'Regular');
             $status = array('Active', 'Inactive');
+
+
 
             // Create connection
           

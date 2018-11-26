@@ -1,6 +1,6 @@
 <?php
 
- $link = mysqli_connect("localhost", "root", "", "aaadb");
+ $link = mysqli_connect("den1.mysql1.gear.host", "accudb", "Sm2v5W9?4-24", "accudb");
 if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
