@@ -1,0 +1,102 @@
+<form action="user.php" method="post"/>
+                                                <!--          CHART OF ACCOUNTS TABLE HERE                          -->
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">EmployeePage</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                
+                    <div class="chart-of-accounts">
+                      <!-- Trigger the modal with a button -->
+                      <button type="button" class="btn btn-outline btn-info" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" >Add Account</button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content chart-accounts-modal-content">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Add an Account to your Chart of Accounts</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="chart-accounts-modal">
+                                    <li><label>Account Number</label></li>
+                                    <li><input class="form-control" type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="EmployeeId" required></>
+                                    <li><label>FirstName</label></li>
+                                    <li><input class="form-control" id="FirstName" required></>
+                                    
+                                </div>
+                                <div class="chart-accounts-modal">
+                                     <li><label for="Occupation">Occupation</label></li>
+                                     <li><select id="Occupation" class="form-control">
+                                         <option>Admin  </option>
+                                         <option>Mgr</option>
+                                         <option>Reg</option>                                      
+                                         
+                                         </select></li>
+                                     <li><label for="Status">Status</label></li>
+                                     <li><select id="Status" class="form-control">
+                                         <option>Active </option>
+                                         <option>Inactive</option>
+                                         
+                                         </select></li>
+                                </div>
+                                <div class="chart-accounts-modal">
+                                <li><label for="accountNormalSide">Normal Side</label></li>
+                                     <li><select id="accountNormalSide" class="form-control">
+                                         <option>Right</option>
+                                         <option>Left</option>
+                                    </select></li>
+                                    <li><label>Initial Balance</label></li>
+                                    <li><input class="form-control" type="number"  step="any" id="initialBalance" required></>
+                                </div>
+                                
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              
+                              <button type="button" class="btn btn-outline btn-success" id="addAccount-buttn" onclick="addChartAccount()">Add Account</button>
+                              <button type="button" class="btn btn-outline btn-danger" id= "delAccount-buttn" onclick="cancelDialog()">Cancel</button>
+                              <script type="text/javascript" src="../js/sb-admin-2.js"></script>
+                            </div>
+                          </div>   
+                        </div>
+                      </div>
+                      </div>
+                        <div class="panel-body">
+                           
+                           
+                            <table width="100%" class="table table-striped  table-hover" id="chart-of-accounts-table">
+                                <thead>
+                                    <tr class ="chart-of-accounts-header-row">
+                                        <th>EmployeeId</th>
+                                        <th>First Name </th>
+                                        <th>LastName </th>
+                                        <th>email </th>
+                                        <th>Occupation</th>
+                                        <th>status </th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+           
+         
+            
+        </div>
+        <!-- /#page-wrapper -->
