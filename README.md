@@ -1,4 +1,4 @@
-Affordable Accounting Application
+Accu Accounting Application
 
 
 
