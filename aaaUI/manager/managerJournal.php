@@ -110,6 +110,25 @@ include '../auth/databaseConnection.php'
                         <li>
                             <a href="ledgers.php"><i class="fa fa-book  fa-fw"></i> Ledgers</a>
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-file fa-fw"></i> Reports <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="trial.php">Trial Balance</a>
+                                </li>
+                                <li>
+                                    <a href="income.php">Income Statement</a>
+                                </li>
+                                <li>
+                                    <a href="balance.php">Balance Sheet</a>
+                                </li>
+                            <li>
+                                <a href = "retainedEarnings.php">Retained Earning</a>
+                            </li>
+                                
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                             <!-- /.nav-second-level --
                     </ul>
                 </div>
