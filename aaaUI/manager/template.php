@@ -175,11 +175,6 @@ include '../auth/databaseConnection.php'
 
 
 
-
-
-
-
-
            <!--                                                     end of your code                   -->
         </div>
         <!-- /#page-wrapper -->

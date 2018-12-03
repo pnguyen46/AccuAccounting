@@ -77,7 +77,7 @@ include '../auth/databaseConnection.php'
 
                 <!--                                                       user specification                         -->
                 <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome admin</label>
+                   <label style="color: #2a6496;">Welcome user</label>
                 </li>
                 <!-- /.dropdown -->
 
