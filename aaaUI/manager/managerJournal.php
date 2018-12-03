@@ -206,14 +206,14 @@ include '../auth/databaseConnection.php'
 
                               date_default_timezone_set("America/New_York");
                              
-                             $query= "SELECT *  FROM `journal` where isApproved = '1'";
+                             $query= "SELECT *  FROM journal where isApproved = '1'";
                              $result = mysqli_query($conn, $query);
 
   
 
                                   $accountsInEntry = "";
                                while ($row = mysqli_fetch_assoc($result)) {
-                                $journalEntryData= "SELECT * FROM `journalentries` WHERE journalEntryID = '".$row['journalEntryID']. "'";
+                                $journalEntryData= "SELECT * FROM journalentries` WHERE journalEntryID = '".$row['journalEntryID']. "'";
                                 $entryData =  mysqli_query($conn, $journalEntryData);
                                 while ($toggleData = mysqli_fetch_assoc($entryData))
                                     {

@@ -1,7 +1,7 @@
 <?php
 //this needs to be the first one in the page => before it displays/echo anything!
 //Start session => For getting error/success messages
-$db = mysqli_connect('den1.mysql1.gear.host','accudb','Fi9A-342?v5W','accudb') 
+$db = mysqli_connect('den1.mysql5.gear.host','accudb','Fo4TA64eI~v_','accudb') 
  or die('Error connecting to MySQL server.');
 ?>
 <!DOCTYPE html>

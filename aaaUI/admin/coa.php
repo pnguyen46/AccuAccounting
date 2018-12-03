@@ -16,7 +16,7 @@ if(!empty($AcctName)){
 
     
 // Create connection
- $conn = mysqli_connect("den1.mysql1.gear.host", "accudb", "Fi9A-342?v5W", "accudb");
+ $conn = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
 if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }

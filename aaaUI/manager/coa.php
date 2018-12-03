@@ -20,9 +20,9 @@ if(!empty($AcctNumber)){
 if(!empty($AcctName)){
 
    
-    $host="den1.mysql1.gear.host";
+    $host="den1.mysql5.gear.host";
     $dbusername ="accudb";
-    $dbpassword = "Fi9A-342?v5W";
+    $dbpassword = "Fo4TA64eI~v_";
     $dbname ="accudb";
     
 // Create connection

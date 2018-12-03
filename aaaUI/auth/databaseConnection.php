@@ -3,9 +3,9 @@
 
   	$object = new Configuration;
 
-  	$object -> setHostName('den1.mysql1.gear.host');
+  	$object -> setHostName('den1.mysql5.gear.host');
   	$object -> setHostUserName('accudb');
-  	$object -> setHostPassword('Fi9A-342?v5W');
+  	$object -> setHostPassword('Fo4TA64eI~v_');
   	$object -> setDatabaseName('accudb');
 
   	$serverName = $object -> getHostName();
