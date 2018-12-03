@@ -5,7 +5,7 @@
 
   	$object -> setHostName('den1.mysql1.gear.host');
   	$object -> setHostUserName('accudb');
-  	$object -> setHostPassword('Bi6tq~p!Kow6');
+  	$object -> setHostPassword('Fi9A-342?v5W');
   	$object -> setDatabaseName('accudb');
 
   	$serverName = $object -> getHostName();

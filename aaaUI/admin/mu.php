@@ -20,7 +20,7 @@ if(!empty($password)){
     
     $host="den1.mysql1.gear.host";
     $dbusername ="accudb";
-    $dbpassword = "Sm2v5W9?4-24";
+    $dbpassword = "Fi9A-342?v5W";
     $dbname ="accudb";
     
 // Create connection

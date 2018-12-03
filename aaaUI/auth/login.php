@@ -49,7 +49,6 @@
                   </div>
 				  <div class="form-group">
 				  <button type="button" class="btn btn-outline btn-success">Register</button>
-                  <button type="button" class="btn btn-outline btn-warning">Contact Us</button>
 				  </div>
   
                    <?php if(@$_GET['err'] == 1){ ?>

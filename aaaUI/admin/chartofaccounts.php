@@ -213,21 +213,6 @@ include "../auth/databaseConnection.php";
                                                             echo "<option value='" . $row['cat_name'] ."'>" . $row['cat_name']."</option>";
 
                                                         }
-                                                        /*echo" </select>";
-                                                        echo " <li><label for='accountSubCSelect'>Account Subcategory</label></li>";
-                                                        echo"<li><select  class = 'accountSubcategory' name='AcctSubCategory'class='form-control' name='acctSubCat'></li> ";
-
-
-                                                        $sql2 = "SELECT * FROM subaccounts";
-
-                                                        $result2 = mysqli_query($conn,$sql2);
-
-                                                        while ($row = mysqli_fetch_array($result2)) {
-
-                                                            $sub_id = $row['sub_id'];
-                                                            echo "<option value='" .$row['subCat_name'] ."'>" . $row['subCat_name']."</option>";
-                                                        }*/
-
                                                         ?>
 
 
@@ -368,7 +353,7 @@ include "../auth/databaseConnection.php";
 
                                                        
                                                         // Create connection
-                                                        $conn = new mysqli('localhost', 'root', '', 'aaadb');
+                                                        $conn = new mysqli('den1.mysql1.gear.host', 'accudb', 'Fi9A-342?v5W', 'accudb');
                                                         // Check connection
                                                         if ($conn->connect_error) {
                                                             die("Connection failed: " . $conn->connect_error);
@@ -384,21 +369,6 @@ include "../auth/databaseConnection.php";
                                                             echo "<option value='" . $row['cat_name'] ."'>" . $row['cat_name']."</option>";
 
                                                         }
-
-                                                        /*echo" </select>";
-                                                        echo " <li><label for='accountSubCSelect'>Account Subcategory</label></li>";
-                                                        echo"<li><select id='accountSubCSelect' name='AcctSubCategory'class=' accountSubcategory' name='acctSubCat'></li> ";
-
-                                                        $sql2 = "SELECT * FROM subaccounts";
-
-                                                        $result2 = mysqli_query($conn,$sql2);
-
-                                                        while ($row = mysqli_fetch_array($result2)) {
-
-                                                            $sub_id = $row['sub_id'];
-                                                            echo "<option value='" .$row['subCat_name'] ."'>" . $row['subCat_name']."</option>";
-                                                        }*/
-
                                                         ?>
 
 

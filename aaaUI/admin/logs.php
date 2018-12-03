@@ -2,7 +2,8 @@
 //this needs to be the first one in the page => before it displays/echo anything!
 //Start session => For getting error/success messages
 //include "../auth/databaseConnection.php";
-$db = mysqli_connect('localhost','root','','aaadb') 
+
+$db = mysqli_connect('den1.mysql1.gear.host', 'accudb', 'Fi9A-342?v5W', 'accudb') 
  or die('Error connecting to MySQL server.');
 ?>
 <!DOCTYPE html>
