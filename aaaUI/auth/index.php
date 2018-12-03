@@ -1,6 +1,6 @@
 <?php
 
-include "Configuration.php";
+//include "Configuration.php";
 require_once('user.php');
 //require_once('errorMessage.php');
 
