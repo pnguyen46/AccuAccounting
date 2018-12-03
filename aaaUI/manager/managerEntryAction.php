@@ -5,6 +5,7 @@ server with default setting (user 'root' with no password) */
 
 //require('config.php'); // CONNECTION to Database
 $link = mysqli_connect("den1.mysql1.gear.host", "accudb", "Fi9A-342?v5W", "accudb");
+
 // Check connection
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());

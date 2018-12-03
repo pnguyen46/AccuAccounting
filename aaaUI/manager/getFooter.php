@@ -1,6 +1,6 @@
 <?php
 
-$link = mysqli_connect("den1.mysql1.gear.host", "accudb", "Fi9A-342?v5W", "accudb");
+ $link = mysqli_connect("den1.mysql1.gear.host", "accudb", "Fi9A-342?v5W", "accudb");
 if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
@@ -14,7 +14,7 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 		
 	echo"<tr>";
     echo "<td style='font-weight: bold;'>Total Balance: </td>";
-    echo "<td style='font-weight: bold;'>$" . number_format($row['Balance'],2) . "</td>";
+    echo "<td style='font-weight: bold;'>$" . $row['Balance'] . "</td>";
     echo"</tr>";
 
 			

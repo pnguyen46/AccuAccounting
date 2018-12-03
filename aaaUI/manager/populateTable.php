@@ -30,10 +30,10 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 			{
 				echo"<tr>";
 			    echo "<td>" . $journalEntryDate . "</td>";
-			    echo "<td> $" . number_format($row['debits'],2) . "</td>";
-			    echo "<td> $" . number_format($row['credits'],2) . "</td>";
-			    echo "<td> $" . number_format($row['accountBalanceBefore'],2) . "</td>";
-			    echo "<td> $" . number_format($row['accountBalanceAfter'],2) . "</td>";
+			    echo "<td> $" . $row['debits'] . "</td>";
+			    echo "<td> $" . $row['credits'] . "</td>";
+			    echo "<td> $" . $row['accountBalanceBefore'] . "</td>";
+			    echo "<td> $" . $row['accountBalanceAfter'] . "</td>";
 			    $url = 'journalEntryDetails.php?entry=' . $row['journalEntryID'];
 			    echo "<td> <a href='" .$url ."'>" . $row['journalEntryID'] . "</a></td>";
 			    echo"</tr>";

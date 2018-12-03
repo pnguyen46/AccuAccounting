@@ -1,6 +1,6 @@
 <?php
 
- $link = mysqli_connect("den1.mysql1.gear.host", "accudb", "Fi9A-342?v5W", "accudb");
+ $link = mysqli_connect("den1.mysql1.gear.host", "accudb", "Fi9A-342?v5W", "aaadb");
 if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
@@ -33,8 +33,8 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 				echo"<tr>";
 				 echo "<td>". $accoutNumber. " </td>";
 			    echo "<td>" . $row['account'] . "</td>";
-			    echo "<td>" . number_format($debits,2) . "</td>";
-			    echo "<td>" . number_format($credits,2) . "</td>";
+			    echo "<td>" . $debits . "</td>";
+			    echo "<td>" . $credits . "</td>";
 			    echo"</tr>";
 
 		}
