@@ -13,7 +13,7 @@ include 'Employee.php';
 		
 		public function __construct()
 		{
-			$this->conn =  mysqli_connect('den1.mysql1.gear.host', 'accudb', 'Sm2v5W9?4-24', 'accudb');
+			$this->conn =  mysqli_connect('den1.mysql1.gear.host', 'accudb', 'Bi6tq~p!Kow6', 'accudb');
 			//$session = session_start();
 			
 			//echo'OK';
