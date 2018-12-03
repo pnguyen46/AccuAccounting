@@ -54,6 +54,7 @@
                    <?php if(@$_GET['err'] == 1){ ?>
         <div class ='alert alert-danger' style ="color: red; ">Username or password is incorrect</div>
        <?php } ?>
+                    <?php $_SESSION['message'] ?>
                 </form>
 
 
