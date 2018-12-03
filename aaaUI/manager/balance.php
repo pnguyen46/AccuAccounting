@@ -187,10 +187,10 @@ include '../auth/databaseConnection.php'
                 <!--                                                      Add your code here                                         -->
         <div>
             <?php
-            $host="localhost";
-            $dbusername ="root";
-            $dbpassword = "";
-            $dbname ="aaadb";
+            $host="den1.mysql1.gear.host";
+            $dbusername ="accudb";
+            $dbpassword = "Fi9A-342?v5W";
+            $dbname ="accudb";
             $occupation = array('Admin', 'Manager', 'Regular');
             $status = array('Active', 'Inactive');
 
