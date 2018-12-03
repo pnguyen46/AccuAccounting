@@ -48,7 +48,7 @@
 					  <button type="button" class="btn btn-outline btn-danger">Cancel</button>
                   </div>
 				  <div class="form-group">
-				  <button type="button" class="btn btn-outline btn-success">Register</button>
+				  <button onclick="window.location.href='registerUser.php'" type="button"  class="btn btn-outline btn-success">Register</button>
 				  </div>
   
                    <?php if(@$_GET['err'] == 1){ ?>
