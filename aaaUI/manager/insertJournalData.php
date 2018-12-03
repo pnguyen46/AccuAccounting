@@ -35,7 +35,7 @@ function generateJournalEntryID()
     //Generate random string to be used as the journal entry ID,so each individual transaction will belong to the same journal entry.
      
       for($i=0; $i < count($_POST['account']); $i++) {
-                $sql_journal_entries = "INSERT INTO JournalEntries(journalEntryID,account, debits,credits) VALUES (?, ?, ?, ?)";
+                $sql_journal_entries = "INSERT INTO JournalEntries(journalEntryID,account,debits,credits) VALUES (?, ?, ?, ?)";
                 if($stmt_journal_entries = mysqli_prepare($link, $sql_journal_entries))
                 {
                     mysqli_stmt_bind_param($stmt_journal_entries, "ssdd",$entryID, $account, $debits, $credits);
