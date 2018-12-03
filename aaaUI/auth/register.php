@@ -25,15 +25,16 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       }
       else {
             $_SESSION['message'] = "Registration unsuccessful user was not added!";
-            header('location: registerUser.php');
+            header('location: login.php');
             exit();
         }
       }
       else {
           $_SESSION['message'] = "Both passwords do not match!";
-          header('location: registerUser.php');
+          header('location: login.php');
           exit();
           }
     exit();
+    header('location: login.php');
   }
 ?>
