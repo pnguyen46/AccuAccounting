@@ -101,10 +101,6 @@ include '../auth/databaseConnection.php'
         <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">  
-                        
-                        <li>
-                            <a href="dashboard.php"><i class="fa fa-table fa-fw"></i> Dashboard </a>
-                        </li>
                         <li>
                             <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
                         </li>
@@ -114,24 +110,6 @@ include '../auth/databaseConnection.php'
                         <li>
                             <a href="ledgers.php"><i class="fa fa-book  fa-fw"></i> Ledgers</a>
                         </li>
-                    <li>
-                        <a href="#"><i class="fa fa-file fa-fw"></i> Reports <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="trial.php">Trial Balance</a>
-                            </li>
-                            <li>
-                                <a href="income.php">Income Statement</a>
-                            </li>
-                            <li>
-                                <a href="balance.php">Balance Sheet</a>
-                            </li>
-                            <li>
-                                <a href = "retainedEarnings.php">Retained Earning</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
                             <!-- /.nav-second-level --
                     </ul>
                 </div>
@@ -162,7 +140,7 @@ include '../auth/databaseConnection.php'
                         <div class="panel-body">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#generaljournal" data-toggle="tab">Journal</a>
+                                <li class="active"><a href="#generaljournal" data-toggle="tab">General Journal</a>
                                 </li>
                                 <li><a href="#profile" data-toggle="tab">Pending Entries</a>
                                 </li>
@@ -175,7 +153,7 @@ include '../auth/databaseConnection.php'
                                 <div class="tab-pane fade in active" id="generaljournal">
                                     
                                      <div class="chart-of-accounts">
-                                <a href="journalize.php" class="add-row-btn btn btn-outline btn-success">Add Journal Entry</a>
+                                <a href="journalize.php" class="add-row-btn btn btn-outline btn-info">Add Journal Entry</a>
                                     
                             </div>
 
@@ -206,14 +184,14 @@ include '../auth/databaseConnection.php'
 
                               date_default_timezone_set("America/New_York");
                              
-                             $query= "SELECT *  FROM journal where isApproved = '1'";
+                             $query= "SELECT *  FROM `journal` where isApproved = '1'";
                              $result = mysqli_query($conn, $query);
 
   
 
                                   $accountsInEntry = "";
                                while ($row = mysqli_fetch_assoc($result)) {
-                                $journalEntryData= "SELECT * FROM journalentries` WHERE journalEntryID = '".$row['journalEntryID']. "'";
+                                $journalEntryData= "SELECT * FROM `journalentries` WHERE journalEntryID = '".$row['journalEntryID']. "'";
                                 $entryData =  mysqli_query($conn, $journalEntryData);
                                 while ($toggleData = mysqli_fetch_assoc($entryData))
                                     {
@@ -259,7 +237,7 @@ include '../auth/databaseConnection.php'
 
                                    
                                 $url = "<a href='journalEntryDetailsJournal.php?entry=" . $journalEntryID . "'";
-                                $class = "class=' btn btn-outline btn-success ' style='width: 80px;' >";
+                                $class = "class=' btn btn-outline btn-primary ' style='width: 80px;' >";
 
                                 echo "<td>" .$url .  $class  . "View"  . "</a></td>";
 
@@ -385,7 +363,7 @@ include '../auth/databaseConnection.php'
 
                                    
                                 $url = "<a href='journalEntryDetailsAction.php?entry=" . $journalEntryID . "'";
-                                $class = "class=' btn btn-outline btn-success ' style='width: 100px;' >";
+                                $class = "class=' btn btn-outline btn-primary ' style='width: 100px;' >";
 
                                 echo "<td>" .$url .  $class  . "Take Action"  . "</a></td>";
 
@@ -490,7 +468,7 @@ include '../auth/databaseConnection.php'
 
                                    
                                 $url = "<a href='rejectedEntries.php?entry=" . $journalEntryID . "'";
-                                $class = "class=' btn btn-outline btn-success ' style='width: 80px;' >";
+                                $class = "class=' btn btn-outline btn-primary ' style='width: 80px;' >";
 
                                 echo "<td>" .$url .  $class  . "View"  . "</a></td>";
 
