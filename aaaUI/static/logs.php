@@ -1,7 +1,7 @@
 <?php
 include 'base.php';
 ?>
-
+<html>
 <head>
 
 
@@ -136,15 +136,5 @@ include 'base.php';
 
 						</div>
 					</div>
-				</div>
-				<!-- /.col-lg-12 -->
-			</div>
-			<!-- /.row -->
-		</div>
-		<!-- /#page-wrapper -->
-	</div>
-	<!-- /#wrapper -->
-
-</body>
 
 </html>
