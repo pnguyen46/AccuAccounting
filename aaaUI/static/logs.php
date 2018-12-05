@@ -25,7 +25,6 @@ include '../static/base.php';
 									<th>Field Changed</th>
 									<th>From</th>
 									<th>To</th>
-									<th>Changed By</th>
 									<th>Date</th>
 								</thead>
 								<tbody>
