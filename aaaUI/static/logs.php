@@ -30,7 +30,6 @@ include 'base.php';
 	<!-- Custom Fonts -->
 	<link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-	<script type="text/javascript" src="../../js/sb-admin-2.js"></script>
 
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
