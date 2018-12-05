@@ -54,7 +54,6 @@ include 'base.php';
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
-						<script type="text/javascript" src="../../js/sb-admin-2.js"></script>
 						<div class="panel-body">
 							<table width="100%" class="table table-striped  table-hover" id="chart-of-accounts-table">
 								<thead>
@@ -68,7 +67,7 @@ include 'base.php';
 									<?php
 
 
-                     $occupation = array('Admin', 'Manager', 'Regular');
+                     $occupation = array('Admin', 'Manager', 'Accountant');
 										 $status = array('Active', 'Inactive');
                        $sql = 'SELECT `jecl`.user, `je`.journalEntryID, `je`.account, `je`.debits as newDebits, `je`.credits as newCredits, `je`.accountBalanceBefore as newAccountBalanceBefore, '.
 											  			'`je`.accountBalanceAfter as newAccountBalanceAfter, `jecl`.debits as oldDebits, `jecl`.credits as oldCredits, `jecl`.accountBalanceBefore as oldAccountBalanceBefore, '.
