@@ -1,5 +1,5 @@
 <?php
-include '../static/base.php';
+include 'base.php';
 ?>
 
 <head>
