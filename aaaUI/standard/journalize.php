@@ -282,6 +282,9 @@ include '../static/base.php';
 
     </div>
     <!-- /#wrapper -->
+    
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- jQuery -->
     <script src="../../vendor/jquery/jquery.min.js"></script>
