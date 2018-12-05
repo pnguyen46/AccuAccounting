@@ -1,7 +1,6 @@
-<?php 
-include '../auth/databaseConnection.php'
- ?>
-
+<?php
+include '../static/base.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,7 +36,7 @@ include '../auth/databaseConnection.php'
             color: white;
         }
     </style>
- 
+
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -68,119 +67,14 @@ include '../auth/databaseConnection.php'
 
 <body>
  <div id="wrapper">
-
-        <!-- Navigation (upper right corner)-->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                   <img src="../../images/logo.png" style="width:130px;height:80px;" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-
-               
-
-              
-              
-
-
-                <!--                                                       user specification                         -->
-                <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome Manager</label>
-                </li>
-                <!-- /.dropdown -->
-
-
-                <!-- User account here -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../auth/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-
-
-<!--                                                       LEFT SIDE MENU HERE                            -->
-          
-        <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                         <li>
-                            <a href="dashboard.php"><i class="fa fa-bar-chart-o fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
-                        </li>
-                        <li>
-                            <a href="managerJournal.php"><i class="fa fa-edit fa-fw"></i>Journal</a>
-
-                        </li>
-                    
-                        <li>
-                            <a href="ledgers.php"><i class="fa fa-book  fa-fw"></i> Ledgers</a>
-                        </li>
-
-                        <li>
-                            <a href="#"><i class="fa fa-file fa-fw"></i> Reports <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="trial.php">Trial Balance</a>
-                                </li>
-                                <li>
-                                    <a href="income.php">Income Statement</a>
-                                </li>
-                                <li>
-                                    <a href="balance.php">Balance Sheet</a>
-                                </li>
-                            <li>
-                                <a href = "retainedEarnings.php">Retained Earning</a>
-                            </li>
-                                
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        
-
-                        <li>
-                            <a href="logs.php"><i class="fa fa-files-o fa-fw"></i> Logs</a>
-                        </li>
-
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-
-
-      
-
         <div id="page-wrapper">
-            
+
                     <!--                                                      Add your code here                                         -->
                     <div  id="docHeaders" style=" text-align: center">
                         <ul style="list-style-type: none">
-                          
+
                             <label style='font-size:18px; color: #2a6496;'  align='center'>Accu Accounting Application</label><li><label style='font-size:18px; color: #2a6496;'  align='center'>Income Statement</label></li><button type="button"  class="btn btn-outline  btn-primary"  id="download" onclick="downloadTrialBalance()" style="margin-left: 15px !important; padding: 9px 18px; "> <i class="fa fa-download"></i></button></li>
-                                 
+
                                 <li> <label style='font-size:18px; color: #2a6496;' id='date' align='center'></label></li></ul>
                             </div>
 
@@ -188,20 +82,20 @@ include '../auth/databaseConnection.php'
                     <div id='tablediv'>
                         <table id='customers' style="width: 1000px">
                             <thead>
-                            
-                            
+
+
                             </thead>
-                            <tbody> 
+                            <tbody>
 
             <div>
                 <?php
-                
+
                 $sql = "SELECT AcctName,AcctCategory, Balance FROM coa order by AcctNumber asc";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result)) {
                     $maketable = " ";
-                   
+
                     $revenuesum=0;
                     $expensesum=0;
                     $buildexpense='';
@@ -325,17 +219,17 @@ include '../auth/databaseConnection.php'
     <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
 
-    
+
 
       <script type="text/javascript" src="../../vendor/jspdf/jspdf.min.js"></script>
 
-  
+
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
 <script type="text/javascript">
     function downloadTrialBalance(){
-     
+
           var pdf = new jsPDF('p', 'pt', 'letter');
           pdf.setFont("helvetica");
         pdf.setFontSize(15);
@@ -354,9 +248,9 @@ include '../auth/databaseConnection.php'
     docHeadersPDF = $('#docHeaders')[0];
     source = $('#tablediv')[0];
 
-    // we support special element handlers. Register them with jQuery-style 
+    // we support special element handlers. Register them with jQuery-style
     // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-    // There is no support for any other type of selectors 
+    // There is no support for any other type of selectors
     // (class, of compound) at this time.
     specialElementHandlers = {
         // element with id of "bypass" - jQuery style selector
@@ -382,7 +276,7 @@ include '../auth/databaseConnection.php'
     },
 
     function (dispose) {
-        // dispose: object with X, Y of the last line add to the PDF 
+        // dispose: object with X, Y of the last line add to the PDF
         //          this allow the insertion of new lines after html
         pdf.save('Income Statement.pdf');
     }, margins);
@@ -410,4 +304,3 @@ include '../auth/databaseConnection.php'
 </body>
 
 </html>
-
