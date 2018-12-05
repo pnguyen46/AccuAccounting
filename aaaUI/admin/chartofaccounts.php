@@ -1,16 +1,11 @@
 <?php
-//this needs to be the first one in the page => before it displays/echo anything!
-//Start session => For getting error/success messages
-include "../auth/databaseConnection.php";
+include '../static/base.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <!-- jQuery -->
 <script src="../../vendor/jquery/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
 <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
@@ -74,88 +69,6 @@ include "../auth/databaseConnection.php";
 <body>
 
 <div id="wrapper">
-
-        <!-- Navigation (upper right corner)-->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-			<img src="../../images/logo.png" style="width:130px;height:80px;" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-
-               
-
-              
-              
-
-
-                <!--                                                       user specification                         -->
-                <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome Admin</label>
-                </li>
-                <!-- /.dropdown -->
-
-
-                <!-- User account here -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../auth/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-
-
-<!--                                                       LEFT SIDE MENU HERE                            -->
-          
-        <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li>
-                        <a href="dashboard.php"><i class="fa fa-bar-chart-o fa-fw"></i> DashBoard</a>
-                    </li>
-                    <li>
-                        <a href="manageuser.php"><i class="fa  fa-users   fa-fw"></i> Administer Users </a>
-                    </li>
-                    <li>
-                        <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Logs</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.sidebar-collapse -->
-        </div>
-        <!-- /.navbar-static-side -->
-    </nav>
-
-
-
-
-
-
-
-
-
-
     <!--                                                      CHART OF ACCOUNTS TABLE HERE                          -->
 
     <div id="page-wrapper">
@@ -201,7 +114,7 @@ include "../auth/databaseConnection.php";
                                                 <li><select  class = "accountCategory" name= "AcctCategory" class="form-control">
                                                         <?php
 
-                                                       
+
 
                                                         $sql1 = "SELECT * FROM account";
                                                         $result1 = mysqli_query($conn,$sql1);
@@ -269,7 +182,7 @@ include "../auth/databaseConnection.php";
 
                             <th>Code</th>
                             <th>Name</th>
-                            <th>Category</th>                           
+                            <th>Category</th>
 							<th>Term</th>
                             <th>Normal Side</th>
                             <th>Balance</th>
@@ -351,7 +264,7 @@ include "../auth/databaseConnection.php";
                                                 <li><select id="accountTypeSelect" name= "AcctCategory" class="accountCategory">
                                                         <?php
 
-                                                       
+
                                                         // Create connection
                                                         $conn = new mysqli('den1.mysql1.gear.host', 'accudb', 'Fi9A-342?v5W', 'accudb');
                                                         // Check connection
@@ -445,11 +358,11 @@ include "../auth/databaseConnection.php";
                 if (isset($_SESSION["Notification"]))
                 {
                    echo " <h4 class='modal-title' style='font-size:23px;'>{$_SESSION["Notification"]}</p>";
-                    
+
                 }
                 ?>
 
-                
+
 
             </div>
             <div class="modal-body">
