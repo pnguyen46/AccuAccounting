@@ -615,7 +615,7 @@ $(document).on("click", "[id^='addCredit']", function () {
        {
        elmtTable.removeChild(tableRows[x]);
        }
-      window.location.href = 'managerJournal.php';
+      window.location.href = 'journalEntryDetailsAction.php?entry=.php';
      }
 
 }
