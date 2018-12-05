@@ -43,14 +43,18 @@ include '../static/base.php';
 
 
 <body>
- <div id="wrapper">
+
+    <div id="wrapper">
             <div class="panel-body">
 
 
 
                     <!--                                                      Add your code here                                         -->
                 <div id="page-wrapper">
-
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <h1 class="page-header">General Ledger</h1>
+                      </div>
 
 
 
@@ -90,8 +94,9 @@ include '../static/base.php';
                                             echo "<td>" . $row['AcctNumber'] . "</td>";
                                             echo "<td>" . $accountReference . "</td>";
                                             echo "<td>" . $row['AcctCategory'] . "</td>";
+
                                             echo "<td>" . $row['NormalSide'] . "</td>";
-                                            echo "<td>$" .number_format($row['Balance'],2) . "</td>";
+                                            echo "<td>$" . number_format($row['Balance'],2) . "</td>";
                                             echo "<td>" . $row['Status'] . "</td>";
 
                                             echo"</tr>";
@@ -125,22 +130,6 @@ include '../static/base.php';
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- DataTables JavaScript -->
-    <script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../../dist/js/sb-admin-2.js"></script>
-
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
