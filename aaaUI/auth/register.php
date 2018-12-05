@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['message']= '';
 
-$mysqli = new mysqli('localhost', 'root', '', 'aaadb');
+$mysqli = new mysqli('den1.mysql2.gear.host', 'accuaccountingdb', 'letmein559!', 'accuaccountingdb');
 $errPsw = 0;
 $errNodb = 0;
 
