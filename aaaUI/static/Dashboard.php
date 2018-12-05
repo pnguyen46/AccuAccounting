@@ -23,6 +23,9 @@ include 'base.php';
 <body>
 <div id="wrapper">
 <div id="page-wrapper">
+  <div class="col-lg-12">
+    <h1 class="page-header">Dashboard</h1>
+  </div>
                  <div>
                 <?php
                 // Create connection

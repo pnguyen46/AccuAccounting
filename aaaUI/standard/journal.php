@@ -44,7 +44,7 @@ include '../static/base.php';
 
 <body>
  <div id="wrapper">
-        <div id="page-wrapper">
+    <div id="page-wrapper">
 
 
                     <!--                                                      Add your code here                                         -->
