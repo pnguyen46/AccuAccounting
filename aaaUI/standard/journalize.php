@@ -30,6 +30,10 @@ include '../static/base.php';
      <!-- Custom Fonts -->
      <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+
+   <!-- Metis Menu Plugin JavaScript -->
+   <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
  <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.1/combined/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.1/combined/css/gijgo.min.css" rel="stylesheet" type="text/css" />
@@ -281,6 +285,7 @@ include '../static/base.php';
 
     <!-- jQuery -->
     <script src="../../vendor/jquery/jquery.min.js"></script>
+
 
 
     <!-- DataTables JavaScript -->
