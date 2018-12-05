@@ -1,3 +1,6 @@
+<?php
+include '../static/base.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
- 
+
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -40,136 +43,38 @@
 
 <body>
  <div id="wrapper">
-
-        <!-- Navigation (upper right corner)-->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-			<img src="../../images/logo.png" style="width:130px;height:80px;" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-
-               
-
-              
-              
-
-
-                <!--                                                       user specification                         -->
-                <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome User</label>
-                </li>
-                <!-- /.dropdown -->
-
-
-                <!-- User account here -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../auth/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-
-
-<!--                                                       LEFT SIDE MENU HERE                            -->
-          
-        <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
-                    <ul class="nav" id="side-menu">
- <li>
-                        <a href="dashboard.php"><i class="fa fa-bar-chart-o fa-fw"></i> DashBoard</a>
-                    </li>
-                        <li>
-                            <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
-                        </li>
-						<li>
-                            <a href="journal.php"><i class="fa fa-edit fa-fw"></i>Journalize</a>
-                        </li>
-                        <li>
-                            <a href="ledgers.php"><i class="fa fa-book  fa-fw"></i> Ledgers</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-file fa-fw"></i> Reports <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="trial.php">Trial Balance</a>
-                                </li>
-                                <li>
-                                    <a href="income.php">Income Statement</a>
-                                </li>
-                                <li>
-                                    <a href="balance.php">Balance Sheet</a>
-                                </li>   
-                                <li>
-                                    <a href="retainedEarnings.php">Retained Earning</a>
-                                </li>
-                                
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                        <a href = "logs.php"><i class="fa fa-files-o fa-fw"></i>Logs</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-
-
-      
-
         <div id="page-wrapper">
-            
+
                     <!--                                                      Add your code here                                         -->
                     <div class="panel panel-default">
                     <div class="panel-body">
                         <a href="journal.php" class="btn btn-outline btn-info" style="width: 80px;margin-bottom: 50px;">Back</a>
 
-                        
+
                         <h4></h4>
                         <div class="table-responsive">
                                <div class="panel-body">
                             <table width="100%" class="table table-striped  table-hover" id="ledgers-table">
                                 <thead>
-                                    
-                        
-                                        <th>Date</th>  
-                                        <th>Debits</th> 
+
+
+                                        <th>Date</th>
+                                        <th>Debits</th>
                                         <th>Credits</th>
                                         <th>Balance Before</th>
                                         <th>Balance After</th>
                                         <th>Journal Entry</th>
-                                    
+
                                 </thead>
 
                                 <tfoot>
-                                    
+
                                   </tfoot>
                                 <tbody id = "table-body">
 
 
 
-                                    
+
 
                                 </tbody>
 
@@ -177,11 +82,11 @@
 
 
                         </div>
-             
+
 
                     </div>
                     </div>
-                    
+
 
 
            <!--                                                     end of your code                   -->
@@ -228,8 +133,6 @@
     <!-- jQuery -->
     <script src="../../vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
@@ -258,15 +161,15 @@
 
        //populate table
  $.ajax({ //Seconds Request
-        url: 'getFooter.php',   
-        data:{account:urlparam},  
-        type: 'post',   
-        success: function(returnhtml){ 
+        url: 'getFooter.php',
+        data:{account:urlparam},
+        type: 'post',
+        success: function(returnhtml){
         var foot = $("#ledgers-table").find('tfoot');
-        if (!foot.length) foot = $('<tfoot>').appendTo("#ledgers-table"); 
-        foot.html($(returnhtml));                         
-                    
-            }           
+        if (!foot.length) foot = $('<tfoot>').appendTo("#ledgers-table");
+        foot.html($(returnhtml));
+
+            }
     });
 
 
@@ -280,13 +183,13 @@
             // var table = $('#ledgers-table').DataTable();
             // table.row.add($(resp)).draw(false);
 
-          $("#ledgers-table tbody").append(resp);   
-     
+          $("#ledgers-table tbody").append(resp);
 
-       
+
+
             // Destroy existing table
          //   $('#ledgers-table').DataTable().destroy();
-           
+
          // var table = $('#ledgers-table').DataTable();
          // table.row.add($(resp)).draw(false);
 
@@ -298,7 +201,7 @@
 
 
 
-       
+
 
     });
     </script>
@@ -306,4 +209,3 @@
 </body>
 
 </html>
-

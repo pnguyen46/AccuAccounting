@@ -46,7 +46,7 @@
 					  <button class="btn btn-primary" name="login"type="submit">
                           Login
                       </button>
-					  <button type="button" class="btn btn-outline btn-danger">Cancel</button>
+					  <button onclick="window.location.href='welcome.php'" type="button" class="btn btn-outline btn-danger">Cancel</button>
                   </div>
 				  <div class="form-group">
 				  <button onclick="window.location.href='registerUser.php'" type="button"  class="btn btn-outline btn-success">Register</button>

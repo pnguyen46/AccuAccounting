@@ -1,7 +1,6 @@
-<?php 
-include '../auth/databaseConnection.php'
- ?>
-
+<?php
+include '../static/base.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +8,7 @@ include '../auth/databaseConnection.php'
   <!-- jQuery -->
      <script src="../../vendor/jquery/jquery.min.js"></script>
 
-     <!-- Bootstrap Core JavaScript -->
-     <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    
      <!-- Metis Menu Plugin JavaScript -->
      <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
 
@@ -23,7 +19,7 @@ include '../auth/databaseConnection.php'
 
      <!-- Custom Theme JavaScript -->
     <script src="../../dist/js/sb-admin-2.js"></script>
- 
+
 
      <meta charset="utf-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,112 +53,15 @@ include '../auth/databaseConnection.php'
 
 <body>
 <div id="wrapper">
-
-        <!-- Navigation (upper right corner)-->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-			<img src="../../images/logo.png" style="width:130px;height:80px;" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-
-               
-
-              
-              
-
-
-                <!--                                                       user specification                         -->
-                <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome User</label>
-                </li>
-                <!-- /.dropdown -->
-
-
-                <!-- User account here -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../auth/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-
-
-<!--                                                       LEFT SIDE MENU HERE                            -->
-          
-        <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
-                    <ul class="nav" id="side-menu">
-                    <li>
-                        <a href="dashboard.php"><i class="fa fa-bar-chart-o fa-fw"></i> DashBoard</a>
-                    </li>
-                        <li>
-                            <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
-                        </li>
-						<li>
-                            <a href="journal.php"><i class="fa fa-edit fa-fw"></i>Journalize</a>
-                        </li>
-                        <li>
-                            <a href="ledgers.php"><i class="fa fa-book  fa-fw"></i> Ledgers</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-file fa-fw"></i> Reports <span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="trial.php">Trial Balance</a>
-                                </li>
-                                <li>
-                                    <a href="income.php">Income Statement</a>
-                                </li>
-                                <li>
-                                    <a href="balance.php">Balance Sheet</a>
-                                </li>   
-                                <li>
-                                    <a href="retainedEarnings.php">Retained Earning</a>
-                                </li>
-                                
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                        <a href = "logs.php"><i class="fa fa-files-o fa-fw"></i>Logs</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-
-
-
         <div id="page-wrapper">
 
                     <!--                                                      Add your code here                                         -->
 
 
   <div class="panel panel-default">
-    <form method="post" action="insertJournalData.php" onsubmit="return addJournalEntry()">   <!--                             php form                                    --> 
+    <form method="post" action="insertJournalData.php" onsubmit="return addJournalEntry()">   <!--                             php form                                    -->
   <div class="panel-heading">
-    
+
         <h1 class="page-header">New Journal Entry</h1>
           <div >
           <!--   Calendar updatedcd -->
@@ -181,25 +80,25 @@ include '../auth/databaseConnection.php'
          </script>
         </div>
 
-        
+
     </div>
     <div class="panel-body">
         <div class="table-responsive">
 
-    
+
 
 
 
                <table class="journalize-table display table-hover" align="center" width="100%" id="journal-entry-table">
                   <thead>
                       <tr>
-                         
+
                           <th>Account</th>
                           <th>Debits</th>
                           <th>Credits</th>
                       </tr>
                      <tr>
-                         
+
                            <td>
 
                              <div style="margin-top: 6px !important; margin-bottom: 6px !important;">
@@ -212,8 +111,8 @@ include '../auth/databaseConnection.php'
                                 <option disabled>--Debits--</option>
                                  <?php
 
-                                    
-                                
+
+
                                 $sql1 = "SELECT * FROM coa";
                                 $result1 = mysqli_query($conn,$sql1);
                                 $result2 = mysqli_query($conn,$sql1);
@@ -222,7 +121,7 @@ include '../auth/databaseConnection.php'
                                             if($row['NormalSide'] == 'Debit')
 
                                             echo "<option value='" . $row['AcctName'] ."'>" . $row['AcctName']."</option>";
-                                             
+
                                         }
                                        echo  "<option disabled>--Credits--</option>";
 
@@ -230,37 +129,37 @@ include '../auth/databaseConnection.php'
                                             if($rowx['NormalSide'] == 'Credit')
 
                                             echo "<option value='" . $rowx['AcctName'] ."'>" . $rowx['AcctName']."</option>";
-                                             
+
                                         }
 
 
 
-                               
+
 
 
                                   ?>
 
-                            
+
                            </select>
                          </div>
-                  
+
                        </td>
 
-                      
+
                         <td>
                             <div class="form-group input-group" style="margin-left:-50px; margin-top: 6px !important; margin-bottom: 6px !important;">
                                 <span class="input-group-addon">$</span><input  style="width: 200px;  text-align:right" type="text" name="debits[]" onkeypress="return isNumberKey(event)" class="form-control debits" >
                             </div>
-                         
+
                         </td>
                         <td>
-                         
+
                             <div class="form-group input-group" style="margin-left:-40px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span>
                                 <input  type="text" class="form-control credits"  name="credits[]"  onkeypress="return isNumberKey(event)" style="width: 200px; text-align:right" readonly="">
                             </div>
-                      
+
                         </td>
-              
+
                         <td >
                           <div style="margin-top: 6px !important; margin-bottom: 6px !important;margin-left:-30px;">
                           <button type="button"  class="btn btn-outline btn-primary" id="addDebit" style="margin-right: 10px; "> Add Debit</button>
@@ -268,16 +167,16 @@ include '../auth/databaseConnection.php'
                           </div>
                         </td>
                       </tr>
-                
-                     
 
 
-                          
+
+
+
                      <!--                        row                     -->
                      <tr>
-                         
+
                            <td>
-                        
+
                              <div style="margin-right: 6px !important; margin-bottom: 6px !important; margin-left: 60px !important; ">
                             <select class="form-control" id="accountSubCSelect"  name="account[]" style="width: 200px;">
                                 <option disabled="">--Debits--</option>
@@ -290,7 +189,7 @@ include '../auth/databaseConnection.php'
                                             if($row['NormalSide'] == 'Debit')
 
                                             echo "<option value='" . $row['AcctName'] ."'>" . $row['AcctName']."</option>";
-                                             
+
                                         }
                                        echo  "<option disabled>--Credits--</option>";
 
@@ -298,50 +197,50 @@ include '../auth/databaseConnection.php'
                                             if($rowx['NormalSide'] == 'Credit')
 
                                             echo "<option value='" . $rowx['AcctName'] ."'>" . $rowx['AcctName']."</option>";
-                                             
+
                                         }
 
 
                                ?>
                            </select>
                          </div>
-                  
+
                        </td>
 
-                      
+
                         <td>
                             <div class="form-group input-group" style="margin-left:10px; margin-top: 6px !important; margin-bottom: 6px !important;">
                                 <span class="input-group-addon">$</span><input  style="width: 200px; text-align:right; type="text" name="debits[]"  onkeypress="return isNumberKey(event)" class="form-control debits" readonly="">
                             </div>
-                         
+
                         </td>
                         <td>
-                         
+
                             <div class="form-group input-group" style="margin-left:20px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span>
                  <input type="text" class="form-control credits" onkeypress="return isNumberKey(event)" name="credits[]"  style="width:200px; text-align:right; " >
                             </div>
-                      
+
                         </td>
-              
+
                         <td >
-                          <div style="margin-top: 6px !important; margin-bottom: 6px !important;margin-left:20px;"> 
+                          <div style="margin-top: 6px !important; margin-bottom: 6px !important;margin-left:20px;">
                                <button type="button"  class="btn btn-outline btn-primary" id="addCredit" style="margin-right: 8px; "> Add Credit</button>
                           <button type="button"  class="btn btn-outline btn-danger disabled">Delete</button>
                           </div>
                         </td>
                       </tr>
 
-        
-                
-                
+
+
+
                    <tfoot>
-                     
+
                      <td width="10%"></td>
                      <td width="20%"><p style="float:right">$ <span  id= "totaldebits" class="total_debits" style="float:right" >0</span></p></td>
                      <td width="20%"><p style="float:right">$ <span id="totalcredits" class="total_credits" style="float:right">0</span></p></td>
-                   
+
                    </tfoot>
-      
+
               </table>
 
               <div class="form-group">
@@ -356,26 +255,26 @@ include '../auth/databaseConnection.php'
                                     output.src = URL.createObjectURL(event.target.files[0]);
                                   };
                                 </script>
-                    
+
                 </div>
 
-              
-              
-          
 
 
-                     
+
+
+
+
                 <div class="modal-footer">
                 <button type="button" class="btn btn-outline btn-danger" id= "cancel-journal-entry-buttn" onclick="cancelDialog()">Cancel</button>
                 <button type="submit" class="btn btn-outline btn-info"  id="add-journal-entry-buttn">Submit Journal Entry</button>
                 <script type="text/javascript" src="../../js/journalize.js"></script>
-            
+
 
               </div>
 
 
 
-        </form> 
+        </form>
          <?php
 
        $variable_1 = '$sql1 = "SELECT * FROM coa";$result1 = mysqli_query($conn,$sql1); while ($row = mysqli_fetch_array($result1))';
@@ -420,13 +319,13 @@ include '../auth/databaseConnection.php'
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
 <script type="text/javascript">
-   
+
 
 </script>
 
 
  <script>
-  
+
 $('#addRow').click(function(){
 
        var newRow = '<tr>';
@@ -434,7 +333,7 @@ $('#addRow').click(function(){
        var  rowCount = $('#journal-entry-table tr').length -1;
 
        var td2 = ' <td><div style="margin-top: 6px !important; margin-bottom: 6px !important;"><select class="form-control" id="dynamicSelect" class="selectClass" name="account[]"style="width: 200px;"></select></td>';
-       
+
        var td3 = '<td> <div class="form-group input-group" style="margin-left:20px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span><input  style="width: 200px; text-align:right" type="text" name="debits[]"  onkeypress="return isNumberKey(event)" class="form-control debits" ></div></td>';
 
        var td4 =   '<td><div class="form-group input-group" style="margin-left:20px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span><input  type="text" class="form-control credits"  name="credits[]"   onkeypress="return isNumberKey(event)" style="width: 200px; text-align:right"></div></td>';
@@ -444,13 +343,13 @@ $('#addRow').click(function(){
        var markup =  newRow  + td1 + rowCount + td2 + td3 + td4 + td5;
 
  jQuery('#journal-entry-table').append(markup);
-      
 
-     
+
+
 
      $('#accountSubCSelect').find('option').clone().appendTo('#dynamicSelect');
       $("#dynamicSelect").removeAttr("id");
-     
+
 
 
   });
@@ -458,7 +357,7 @@ $('#addRow').click(function(){
 
  </script>
 
- 
+
 
 <script type="text/javascript">
     function checkDuplicates(){
@@ -468,18 +367,18 @@ $('#addRow').click(function(){
         var value = $(this).val();
         if (existing.indexOf(value) >= 0) {
             isfalse = false;
-           
+
         }
         existing.push(value);
 
 
     });
     return  isfalse;
-   
+
 
 
     }
-   
+
 
 </script>
 
@@ -492,28 +391,28 @@ function addJournalEntry(){
           alert('Cannot use the same account more than once.');
         return false;
     }
-    
+
     var total_debits = document.getElementById("totaldebits").innerText;
     var total_credits = document.getElementById("totalcredits").innerText;
     var date = $("#datepicker").datepicker("getDate");
-    
+
    if(total_debits ==0 && total_credits==0){
         alert("Debits and credits cannot be zero!");
-                return false;   
+                return false;
      }
    else if(total_debits != total_credits ) {
         alert("Debits and credits must be balanced.");
-        return false;        
+        return false;
     }
-    
-   
+
+
     else{
          alert("Journal Entry submitted for approval");
          return true;
-         
+
     }
-    
-    
+
+
 }
 
  </script>
@@ -524,7 +423,7 @@ function addJournalEntry(){
        function isNumberKey(evt)
        {
           var charCode = (evt.which) ? evt.which : evt.keyCode;
-          if (charCode != 46 && charCode > 31 
+          if (charCode != 46 && charCode > 31
             && (charCode < 48 || charCode > 57))
              return false;
 
@@ -535,9 +434,9 @@ function addJournalEntry(){
 
 <script>
     $(document).ready(function() {
-        
+
         $('#journal-date').datepicker();
-    
+
     });
 </script>
 
@@ -581,7 +480,7 @@ $(document).on("click", "[id^='deleteRow']", function () {
   $(this).closest("tr").remove();
     $(".row-id").each(function (i){
            $(this).text(i+1);
-        }); 
+        });
 });
 
 
@@ -597,7 +496,7 @@ $(document).on("click", "[id^='addDebit']", function () {
        var rowCount = $('#journal-entry-table tr').length -1;
 
        var td2 = '</td><td><div style="margin-top: 6px !important; margin-bottom: 6px !important;"><select class="form-control" id="dynamicSelect" class="selectClass" name="account[]"style="width: 200px;"></select></td>';
-       
+
        var td3 = '<td> <div class="form-group input-group" style="margin-left:-50px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span><input  style="width: 200px; text-align:right" type="text" name="debits[]"  onkeypress="return isNumberKey(event)" class="form-control debits" ></div></td>';
 
        var td4 =   '<td><div class="form-group input-group" style="margin-left:-40px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span><input  type="text" class="form-control credits"   name="credits[]" onkeypress="return isNumberKey(event)" style="width: 200px; text-align:right" readonly=""></div></td>';
@@ -614,7 +513,7 @@ $(document).on("click", "[id^='addDebit']", function () {
       $("#dynamicSelect").removeAttr("id");
 });
 
- 
+
 
 
 
@@ -629,7 +528,7 @@ $(document).on("click", "[id^='addCredit']", function () {
        var  rowCount = $('#journal-entry-table tr').length -1;
 
        var td2 = '</td><td><div style="margin-top: 6px !important; margin-bottom: 6px !important; margin-left: 60px !important;"><select class="form-control" id="dynamicSelect" class="selectClass" name="account[]"style="width: 200px;"></select></td>';
-       
+
        var td3 = '<td> <div class="form-group input-group" style="margin-left:10px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span><input  style="width: 200px; text-align:right"  type="text" name="debits[]"  onkeypress="return isNumberKey(event)" class="form-control debits" readonly=""></div></td>';
 
        var td4 =   '<td><div class="form-group input-group" style="margin-left:20px; margin-top: 6px !important; margin-bottom: 6px !important;"><span class="input-group-addon">$</span><input  type="text" class="form-control credits"  name="credits[]" onkeypress="return isNumberKey(event)" style="width: 200px; text-align:right"></div></td>';
@@ -647,7 +546,7 @@ $(document).on("click", "[id^='addCredit']", function () {
       $("#dynamicSelect").removeAttr("id");
 });
 
- 
+
 
 
 
@@ -706,13 +605,13 @@ $(document).on("click", "[id^='addCredit']", function () {
      $('.total_credits').html(0);
      $('#journal-entry-table tbody td').find('input').val('');
 
-    for (var x=rowCount-1; x>4; x--) 
+    for (var x=rowCount-1; x>4; x--)
        {
        elmtTable.removeChild(tableRows[x]);
        }
       window.location.href = 'managerJournal.php';
-     } 
-        
+     }
+
 }
 
 </script>
