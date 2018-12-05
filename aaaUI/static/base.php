@@ -156,7 +156,10 @@ include "../auth/databaseConnection.php";
                     <li>
                         <a href="../standard/chartOfAccounts.php"><i class="fa fa-table fa-fw"></i>Chart of Accounts</a>
                     </li>
-                                <li>
+                    <li>
+                    <a href="../standard/journalize.php"><i class="fa fa-plus fa-fw"></i>Add New Journal</a>
+                    </li>
+                    <li>
                     <a href="../standard/journal.php"><i class="fa fa-edit fa-fw"></i>Journal</a>
                     </li>
                     <li>
