@@ -272,7 +272,7 @@ include '../static/base.php';
 
                 <div class="modal-footer">
                 <button type="button" class="btn btn-outline btn-danger" id= "cancel-journal-entry-buttn" onclick="cancelDialog()">Cancel</button>
-                <button type="submit" class="btn btn-outline btn-info"  id="add-journal-entry-buttn">Submit Journal Entry</button>
+                <button type="submit" class="btn btn-outline btn-info"  id="add-journal-entry-buttn" onclick="window.location.href='journalEntryDetailsAction.php'">Submit Journal Entry</button>
                 <script type="text/javascript" src="../../js/journalize.js"></script>
 
 
