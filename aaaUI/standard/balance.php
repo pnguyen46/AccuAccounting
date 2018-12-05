@@ -70,7 +70,7 @@ include '../static/base.php';
     <div id="page-wrapper">
         <div  id="docHeaders" style=" text-align: center">
             <ul style="list-style-type: none">
-                <label style='font-size:18px; color: #2a6496;'  align='center'>Accu Accounting Application</label><li> <label style='font-size:18px; color: #2a6496;' align='center'>Balance Sheet</label></li>
+                <label style='font-size:18px; color: #2a6496;'  align='center'>AccuAccounting Application</label><li> <label style='font-size:18px; color: #2a6496;' align='center'>Balance Sheet</label></li>
                 <li><button type="button"  class="btn btn-outline  btn-primary"  id="download" onclick="downloadTrialBalance()" style="margin-left: 15px !important; padding: 9px 18px; "> <i class="fa fa-download"></i></button></li>
 
                 <li>    <label style='font-size:18px; color: #2a6496;' id='date' align='center'></label></li></ul>
@@ -376,7 +376,7 @@ include '../static/base.php';
             trialDate =  "As of " + m + "/" + d + "/" + y;
 
             pdf.text(250,40, 'Balance Sheet');
-            pdf.text(250,60, 'Accu Accounting');
+            pdf.text(250,60, 'AccuAccounting');
             pdf.text(250,80, trialDate);
             pdf.text(250,90, "");
             // source can be HTML-formatted string, or a reference

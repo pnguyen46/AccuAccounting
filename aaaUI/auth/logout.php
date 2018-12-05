@@ -1,10 +1,9 @@
-<?php 
+<?php
 
-session_start();  
-	
+session_start();
+
 	if(session_destroy())
 	{
-		echo"<div class ='alert alert-danger' style =color: blue; '>Successfully Logged out</div>";
+		echo"<div class ='alert alert-danger' style =color: blue; '> You have successfully logged out! </div>";
 		header('Refresh: 2; URL = login.php');
 	}
-	

@@ -1,32 +1,11 @@
 <?php
-include '../auth/databaseConnection.php';
-
-
-//this needs to be the first one in the page => before it displays/echo anything!
-//Start session => For getting error/success messages
-// if (!isset($_SESSION))
-//     session_start();
+include '../static/base.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<!-- jQuery -->
-	<script src="../../vendor/jquery/jquery.min.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- Metis Menu Plugin JavaScript -->
-	<script src="../../vendor/metisMenu/metisMenu.min.js"></script>
-
-	<!-- DataTables JavaScript -->
-	<script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="../../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-	<script src="../../vendor/datatables-responsive/dataTables.responsive.js"></script>
-
-	<!-- Custom Theme JavaScript -->
-	<script src="../../dist/js/sb-admin-2.js"></script>
 
 
 	<meta charset="utf-8">
@@ -59,84 +38,11 @@ include '../auth/databaseConnection.php';
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
+
 </head>
 
 <body>
 <div id="wrapper">
-
-        <!-- Navigation (upper right corner)-->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-			<img src="../../images/logo.png" style="width:130px;height:80px;" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-
-               
-
-              
-              
-
-
-                <!--                                                       user specification                         -->
-                <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome admin</label>
-                </li>
-                <!-- /.dropdown -->
-
-
-                <!-- User account here -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../auth/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-
-
-<!--                                                       LEFT SIDE MENU HERE                            -->
-          
-        <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
-				<div class="sidebar-nav navbar-collapse">
-					<ul class="nav" id="side-menu">
-				    <li>
-                        <a href="dashboard.php"><i class="fa fa-bar-chart-o fa-fw"></i> DashBoard</a>
-                    </li>
-                        
-                        <li>
-							<a href="manageuser.php"><i class="fa  fa-users   fa-fw"></i> Administer Users </a>
-						</li>
-						<li>
-							<a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
-						</li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Logs</a>
-                        </li>
-					</ul>
-				</div>
-				<!-- /.sidebar-collapse -->
-			</div>
-			<!-- /.navbar-static-side -->
-		</nav>
 		<!--     CHART OF ACCOUNTS TABLE HERE  -->
 		<div id="page-wrapper">
 			<div class="row">
@@ -208,7 +114,7 @@ include '../auth/databaseConnection.php';
 								</thead>
 								<tbody>
 									<?php
-			
+
 
                                    $occupation = array('Admin', 'Manager', 'Regular');
 									$status = array('Active', 'Inactive');
@@ -226,15 +132,15 @@ include '../auth/databaseConnection.php';
                                             echo "<td>" . $row['lastName'] . "</td>";
                                             echo "<td>" . $row['Occupation'] . "</td>";
                                             echo "<td>" . $row['Status'] . "</td>";
-											
+
                                             echo '<td>
                                             <button type="button" data-toggle="modal" data-target="#Update' . $row['EmployeeID'] . '" id="editButton" class="btn btn-outline btn-success" style="margin-right: 5px;">Edit</button>
-											
+
                                             </td>';
 											  echo '
 											<!-- Modal -->
 											<div class="modal fade" id="Update' . $row['EmployeeID'] . '" role="dialog">
-											
+
 												<div class="modal-dialog">
 												<form action="muedit.php" method="post">
 													<!-- Modal content-->
@@ -243,8 +149,8 @@ include '../auth/databaseConnection.php';
 															<h4 class="modal-title">Update User</h4>
 														</div>
 														<div class="modal-body">
-														
-													
+
+
 															<input type="hidden" value="'. $row['EmployeeID'] .'" name="EmpId" >
 															<div class="modal-body">
 															<div class="chart-accounts-modal">
@@ -263,7 +169,7 @@ include '../auth/databaseConnection.php';
 													<li><label>Password</label></li>
 													<li><input class="form-control"value="'. $row['Password'] .'" name="Password" id="Password" required></li>
 												</div>
-												
+
 															<div class="chart-accounts-modal">
 																<li><label>Occupation</label></li>
 																<li> <select id="Occupation" name="Occupation">';
@@ -293,9 +199,9 @@ include '../auth/databaseConnection.php';
 														</div>
 														<div class="modal-footer">
 															<button type="button" class="btn btn-outline btn-danger" id="cancelEdit-buttn"  data-dismiss="modal">Cancel</button>
-															
+
 															<button type="submit" class="btn btn-outline btn-success" id="updateAccount-buttn">Update User</button>
-															
+
 														</div>
 													</div>
 													</form>
