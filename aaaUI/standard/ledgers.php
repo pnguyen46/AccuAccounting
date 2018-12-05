@@ -45,10 +45,6 @@ include '../static/base.php';
 <body>
 
     <div id="wrapper">
-            <div class="panel-body">
-
-
-
                     <!--                                                      Add your code here                                         -->
                 <div id="page-wrapper">
                   <div class="row">
