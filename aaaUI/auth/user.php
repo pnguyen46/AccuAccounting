@@ -85,7 +85,7 @@ include 'Employee.php';
 				header('Location: ../Manager/chartOfAccounts.php');
 				exit();
 			}
-			else if($result -> getUserType($username, $password) == 'Regular')
+			else if($result -> getUserType($username, $password) == 'Accountant')
 			{
 				session_start();
 				header('Location: ../standard/chartOfAccounts.php');
