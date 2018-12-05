@@ -1,7 +1,6 @@
-<?php 
-include '../auth/databaseConnection.php'
- ?>
-
+<?php
+include '../static/base.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +11,6 @@ include '../auth/databaseConnection.php'
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
- 
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
@@ -43,113 +37,15 @@ include '../auth/databaseConnection.php'
 </head>
 
 <body>
-
     <div id="wrapper">
-
-        <!-- Navigation (upper right corner)-->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                   <img src="../../images/logo.png" style="width:130px;height:80px;" >
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-
-
-
-               
-
-              
-              
-
-
-                <!--                                                       user specification                         -->
-                <li class="dropdown">
-                   <label style="color: #2a6496;">Welcome Manager</label>
-                </li>
-                <!-- /.dropdown -->
-
-
-                <!-- User account here -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="../auth/login.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-
-
-<!--                                                       LEFT SIDE MENU HERE                            -->
-          
-        <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="dashboard.php"><i class="fa fa-table fa-fw"></i> Dashboard </a>
-                        </li>
-                        
-                        <li>
-                            <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
-                        </li>
-						<li>
-                            <a href="managerJournal.php"><i class="fa fa-edit fa-fw"></i>Journalize</a>
-
-                        </li>
-                        <li>
-                            <a href="ledgers.php"><i class="fa fa-book  fa-fw"></i> Ledgers</a>
-                        </li>
-                    <li>
-                        <a href="#"><i class="fa fa-file fa-fw"></i> Reports <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="trial.php">Trial Balance</a>
-                            </li>
-                            <li>
-                                <a href="income.php">Income Statement</a>
-                            </li>
-                            <li>
-                                <a href="balance.php">Balance Sheet</a>
-                            </li>
-                            <li>
-                                <a href = "retainedEarnings.php">Retained Earning</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-
-
-
-      
-
         <div id="page-wrapper">
-            
+
                     <!--                                                      Add your code here                                         -->
                     <div class="panel panel-default">
                     <div class="panel-body">
                         <a href="managerJournal.php" class="btn btn-outline btn-info" style="width: 80px;margin-bottom: 50px;">Back</a>
 
-                        
+
                         <h4></h4>
                         <div class="table-responsive">
                                 <table class="table" id="entry-table">
@@ -162,7 +58,7 @@ include '../auth/databaseConnection.php'
                                         </tr>
                                     </thead>
                                     <tbody id="table-body">
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -172,12 +68,12 @@ include '../auth/databaseConnection.php'
                     <h5>Attachments</h5>
                      <p> N/A</p>
 
-             
+
 
                     </div>
                 </div>
                 <div style="padding-left: 900px;"><button  onclick="approveEntry()" class="btn btn-outline btn-primary" style="width: 80px;margin-bottom: 50px; margin-right: 10px;" id="approve">Approve</button>
-                    
+
                     <!-- Button trigger modal -->
                 <button type="button" id="mymodal" style="width: 80px;margin-bottom: 50px;"   class="btn btn-outline btn-danger" data-toggle="modal" data-target="#myModal">
                  Reject
@@ -204,7 +100,7 @@ include '../auth/databaseConnection.php'
                 </div>
 
                     </div>
-                    
+
 
 
            <!--                                                     end of your code                   -->
@@ -251,8 +147,6 @@ include '../auth/databaseConnection.php'
     <!-- jQuery -->
     <script src="../../vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
@@ -280,25 +174,25 @@ include '../auth/databaseConnection.php'
 
        //populate table
          $.ajax({ //Seconds Request
-        url: 'entryDetailsTable.php',   
-        data:{journalEntryID:urlparam},  
-        type: 'post',   
-        success: function(resp){ 
-        $("#table-body").empty();  
-        $("#table-body").html(resp);                       
-                    
-        }           
+        url: 'entryDetailsTable.php',
+        data:{journalEntryID:urlparam},
+        type: 'post',
+        success: function(resp){
+        $("#table-body").empty();
+        $("#table-body").html(resp);
+
+        }
     });
      //get description
          $.ajax({ //Seconds Request
-        url: 'journalDetailsAjax.php',   
-        data:{journalEntryID:urlparam},  
-        type: 'post',   
-        success: function(resp){ 
-        
-        $("#description").html(resp);                       
-                    
-        }           
+        url: 'journalDetailsAjax.php',
+        data:{journalEntryID:urlparam},
+        type: 'post',
+        success: function(resp){
+
+        $("#description").html(resp);
+
+        }
     });
 
     });
@@ -311,21 +205,21 @@ include '../auth/databaseConnection.php'
         var urlparam = pareurl.searchParams.get("entry");
 
       $.ajax({ //approve entry
-        url: 'managerEntryAction.php',   
-        data:{journalEntryID:urlparam},  
-        type: 'post',   
-        success: function(resp){ 
-             alert("Journal Entry Approved and Posted!"); 
+        url: 'managerEntryAction.php',
+        data:{journalEntryID:urlparam},
+        type: 'post',
+        success: function(resp){
+             alert("Journal Entry Approved and Posted!");
              window.location.href = "managerJournal.php";
               }
-        
-               
+
+
     });
 
 
-    
+
     }
-        
+
 
 
 
@@ -333,11 +227,11 @@ include '../auth/databaseConnection.php'
     <script type="text/javascript">
          $(".btn[data-target='#editModal']").click(function() {
 jQuery('#mymodal').trigger('click');
-   
+
 
                       });
 
-         
+
     </script>
     <script type="text/javascript">
     function rejectEntry(){
@@ -345,35 +239,34 @@ jQuery('#mymodal').trigger('click');
         var geturl = window.location.href;
         var pareurl = new URL(geturl);
         var urlparam = pareurl.searchParams.get("entry");
-        
+
 
       $.ajax({ //approve entry
 
-        url: 'managerActionReject.php',   
+        url: 'managerActionReject.php',
         data:
             {
                 journalEntryID:urlparam,
                 comment:rejectComment
-              
-              },  
-        type: 'post',   
-        success: function(resp){ 
-             alert("Journal Entry Rejected!"); 
+
+              },
+        type: 'post',
+        success: function(resp){
+             alert("Journal Entry Rejected!");
              window.location.href = "managerJournal.php";
               }
-        
-               
+
+
     });
 
 
 
 
         }
-        
+
 
     </script>
 
 </body>
 
 </html>
-
