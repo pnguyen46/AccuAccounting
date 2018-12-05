@@ -61,7 +61,7 @@ include '../static/base.php';
                         <div class="panel-body">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#generaljournal" data-toggle="tab">General Journal</a>
+                                <li class="active"><a href="#generaljournal" data-toggle="tab">Approved Entries</a>
                                 </li>
                                 <li><a href="#profile" data-toggle="tab">Pending Entries</a>
                                 </li>
