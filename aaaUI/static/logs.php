@@ -41,10 +41,6 @@ include 'base.php';
     <![endif]-->
 
 </head>
-				<!-- /.sidebar-collapse -->
-			</div>
-			<!-- /.navbar-static-side -->
-		</nav>
 		<!--     CHART OF ACCOUNTS TABLE HERE  -->
 		<div id="page-wrapper">
 			<div class="row">
