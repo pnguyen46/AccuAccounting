@@ -82,7 +82,6 @@ include 'base.php';
                 $conn->close();
                 ?>
             </div>
-            <div id="page-wrapper">
             <div id = "dash">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
