@@ -283,9 +283,6 @@ include '../static/base.php';
     <script src="../../vendor/jquery/jquery.min.js"></script>
 
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../../vendor/metisMenu/metisMenu.min.js"></script>
-
     <!-- DataTables JavaScript -->
     <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
     <script src="../../vendor/datatables/js/jquery.dataTables.min.js"></script>
