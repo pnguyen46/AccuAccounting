@@ -4,7 +4,7 @@
 server with default setting (user 'root' with no password) */
 
 //require('config.php'); // CONNECTION to Database
-$link = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
+$link = mysqli_connect("den1.mysql2.gear.host", "accuaccountingdb", "letmein559!", "accuaccountingdb");
 
 // Check connection
 if($link === false){
@@ -12,19 +12,19 @@ if($link === false){
 }
 
 
- /* ----------    Update Journal and set journal entry status to approved         -----------                                  */       
+ /* ----------    Update Journal and set journal entry status to approved         -----------                                  */
          $sql_journal = "Update `journal` SET isApproved = ? WHERE `journalEntryID` = ?";
                 if($stmt_journal = mysqli_prepare($link, $sql_journal))
                 {
                     mysqli_stmt_bind_param($stmt_journal, "is",$isApproved, $journalEntryID);
-                    
+
                     $journalEntryID = $_POST['journalEntryID'];
                     $isApproved = 1;
 
                       if(mysqli_stmt_execute($stmt_journal))
                         {
 							mysqli_stmt_execute($result);
-                        } 
+                        }
                      else{
                         echo "ERROR: Could not execute query: $sql_journal. " . mysqli_error($link);
                          }
@@ -37,7 +37,7 @@ if($link === false){
                 echo "ERROR: Could not prepare query: $sql_journal. " . mysqli_error($link);
               }
 
- /* ----------    Update Journal and set journal entry status to approved         -----------                                  */ 
+ /* ----------    Update Journal and set journal entry status to approved         -----------                                  */
 
  $query = "SELECT * FROM `journalEntries` WHERE `journalEntryID` = " . "'" .$journalEntryID . "'";
     $result = mysqli_query($link,$query);
@@ -46,10 +46,10 @@ if($link === false){
     }
     while($row = mysqli_fetch_array($result))
     {
-    
+
         $coaQuery = "SELECT * FROM `coa` WHERE `AcctName` = " ."'" .$row['account']  . "'";
         $resultCOA = mysqli_query($link,$coaQuery);
-        if (!$resultCOA) 
+        if (!$resultCOA)
             {die('Invalid query for coa table');}
         while($rowCOA = mysqli_fetch_array($resultCOA))
             {
@@ -61,11 +61,11 @@ if($link === false){
                 updateAccountBalance($account, $debits, $credits, $balance, $journalEntryID);
                  //update debits and credits for coa
                 updateDebitsCredits($debits, $credits, 'coa', $account,'AcctName');
-                
+
                 //update debits and credits for account and subaccount
                updateParentAccounts($debits, $credits, $account);
-               
-                
+
+
             }
 
  }
@@ -74,7 +74,7 @@ function getNormalSide($account){
     global $link;
     $coaAccount = "SELECT * FROM `coa` WHERE AcctName = " ."'" .$account  . "'";
         $getresultCOA = mysqli_query($link, $coaAccount);
-        if (!$getresultCOA) 
+        if (!$getresultCOA)
         {
             die('Invalid query for coa table' .$account );
         }
@@ -84,7 +84,7 @@ function getNormalSide($account){
                 $normally = $rowCOA['NormalSide'];
 
             }
-        return $normally;    
+        return $normally;
 
 }
 
@@ -95,13 +95,13 @@ function setBalance($account, $balance, $debits, $credits){
     if($stmt_coa = mysqli_prepare($link, $sql_coa))
     {
         mysqli_stmt_bind_param($stmt_coa, "ds",$balance, $account);
-        
-        
-        
+
+
+
           if(mysqli_stmt_execute($stmt_coa))
             {
                echo "success setting ballance for account " .$account. "balance: ". $balance . "\n";
-            } 
+            }
          else{
             echo "ERROR: Could not execute query: $sql_coa. " . mysqli_error($link);
              }
@@ -119,19 +119,19 @@ function updateJournalEntryBalance($balance, $column, $journalEntryID, $account)
 {
       global $link;
 
-     /* ----------             -----------                                  */       
+     /* ----------             -----------                                  */
          $sql_journalentry = "Update `journalentries` SET " .$column  . " = ? WHERE journalEntryID = ? AND account = ?";
 
                 if($stmt_journalentry = mysqli_prepare($link, $sql_journalentry))
                 {
                     mysqli_stmt_bind_param($stmt_journalentry, "iss", $balance, $journalEntryID, $account);
-                    
-                   
-    
+
+
+
                       if(mysqli_stmt_execute($stmt_journalentry))
                         {
                              echo "   success setting journalentry column: " . $column . " balance: ". $balance ."\n";
-                        } 
+                        }
                      else{
                         echo "ERROR: Could not execute query: $sql_journalentry. " . mysqli_error($link);
                          }
@@ -146,20 +146,20 @@ function updateJournalEntryBalance($balance, $column, $journalEntryID, $account)
 function updateChartOfAccountDebitsCredits($debits, $credits, $account){
           global $link;
           $uno = 1;
-                              
+
          $sql_journalentry = "Update `coa` SET hasTransactions ?, debits = debits + ?, credits = credits + ?  WHERE  AcctName = ?";
 
                 if($stmt_journalentry = mysqli_prepare($link, $sql_journalentry))
                 {
                     mysqli_stmt_bind_param($stmt_journalentry, "idds", $uno, $debits, $credits, $account);
-                    
-                   
-    
+
+
+
                       if(mysqli_stmt_execute($stmt_journalentry))
                         {
                              echo "   success setting account debits and credits.";
                              echo "COAAABABY";
-                        } 
+                        }
                      else{
                         echo "ERROR: Could not execute query: $sql_journalentry. " . mysqli_error($link);
                          }
@@ -190,7 +190,7 @@ else
     $sql_journalentry = "Update " . $table . " SET debits = debits + ?, credits = credits + ? WHERE  "  .$column . " = ? ";
 
 }
- 
+
                 if($stmt_journalentry = mysqli_prepare($link, $sql_journalentry))
                 {
                     if($table == "coa")
@@ -204,14 +204,14 @@ else
                      {
                         mysqli_stmt_bind_param($stmt_journalentry, "dds", $debits, $credits, $account);
                      }
-                    
-                    
-                   
-    
+
+
+
+
                       if(mysqli_stmt_execute($stmt_journalentry))
                         {
                              echo "   success setting account debits and credits for " . $account .$debits .$credits;
-                        } 
+                        }
                      else{
                         echo "ERROR: Could not execute query: $sql_journalentry. " . mysqli_error($link);
                          }
@@ -228,7 +228,7 @@ else
 
 function updateParentAccounts($debits, $credits, $childAccount){
      global $link;
-$accountCategorySQL = "Select AcctCategory from `coa` where AcctName = '" . $childAccount . "'"; 
+$accountCategorySQL = "Select AcctCategory from `coa` where AcctName = '" . $childAccount . "'";
 $result = mysqli_query($link, $accountCategorySQL);
 if ($result)
 {
@@ -238,7 +238,7 @@ if ($result)
 
     //Update Account Category
     updateDebitsCredits($debits, $credits, 'account' ,  $category ,'cat_name');
-    $sub_accountCategorySQL = "Select `AcctSubCategory` from `coa` where AcctName = '" . $childAccount . "'"; 
+    $sub_accountCategorySQL = "Select `AcctSubCategory` from `coa` where AcctName = '" . $childAccount . "'";
     $result_sub_cat = mysqli_query($link, $sub_accountCategorySQL);
     if($result_sub_cat)
     {
@@ -247,7 +247,7 @@ if ($result)
         echo '*******' . $subcategory;
 
         //Update Account SubCategory
-        updateDebitsCredits($debits, $credits, 'subaccounts',  $subcategory, 'subCat_name');   
+        updateDebitsCredits($debits, $credits, 'subaccounts',  $subcategory, 'subCat_name');
     }
     else
     {
@@ -257,7 +257,7 @@ if ($result)
 
     //populate Account SubCategory
 
-    
+
 }
 else
 {
@@ -295,7 +295,7 @@ function updateDebitNormalSide($account, $debits, $credits, $balance, $journalEn
         $balance  =  $balance - $credits;
 
     }
-    
+
     setBalance($account, $balance, $debits, $credits);
     updateJournalEntryBalance($balance, 'accountBalanceAfter',$journalEntryID, $account);
 
@@ -336,14 +336,3 @@ mysqli_stmt_close($stmt_journal);
 mysqli_close($link);
 
 ?>
-
-            
-          
-    
-
-
-
-
-
-
-

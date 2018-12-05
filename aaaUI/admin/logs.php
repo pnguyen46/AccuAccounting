@@ -3,7 +3,7 @@
 //Start session => For getting error/success messages
 //include "../auth/databaseConnection.php";
 
-$db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb') 
+$db = mysqli_connect('den1.mysql2.gear.host', 'accuaccountingdb', 'letmein559!', 'accuaccountingdb') 
  or die('Error connecting to MySQL server.');
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
     <meta name="description" content="">
     <meta name="author" content="">
 
- 
+
 
     <!-- Bootstrap Core CSS -->
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            
+
             </div>
             <!-- /.navbar-header -->
 
@@ -67,10 +67,10 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
 
 
 
-               
 
-              
-              
+
+
+
 
 
                 <!--                                                       user specification                         -->
@@ -103,7 +103,7 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
 
 
 <!--                                                       LEFT SIDE MENU HERE                            -->
-          
+
         <div class="navbar-default sidebar" role="navigation" style="margin-top: 90px">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -111,7 +111,7 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
                             <a href="journal.php"><i class="fa fa-edit fa-fw"></i>Journal</a>
 
                         </li>
-                        
+
                         <li>
                             <a href="chartOfAccounts.php"><i class="fa fa-table fa-fw"></i> Chart of Accounts</a>
                         </li>
@@ -131,11 +131,11 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
                                 <li>
                                     <a href="balance.php">Balance Sheet</a>
                                 </li>
-                                
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
+
 
                         <li>
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Logs</a>
@@ -149,20 +149,20 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
         </nav>
 
 
-      
+
 
         <div id="page-wrapper">
-            
+
                     <!--                                                      Add your code here                                         -->
                     <div class="panel panel-default">
 
-                    
+
                        <div class="panel-body">
 
                     <table width="100%" class="table table-striped  table-hover" id="log-table">
                         <thead>
                       <tr>
-                         
+
                           <th>ID</th>
                           <th>Date/Time</th>
                           <th>Changes</th>
@@ -174,26 +174,26 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
 					<?php
 						$query = "SELECT * FROM logs";
 						mysqli_query($db, $query) or die('Error querying database.');
-						$result = mysqli_query($db, $query); 
-						$row = mysqli_fetch_assoc($result); 
+						$result = mysqli_query($db, $query);
+						$row = mysqli_fetch_assoc($result);
 						while ($row = mysqli_fetch_assoc($result))
 						{
 						echo "<tr>";
-						echo "<td>".$row['ID']."</td>"; 
-						echo "<td>".$row['Date/Time']."</td>"; 
+						echo "<td>".$row['ID']."</td>";
+						echo "<td>".$row['Date/Time']."</td>";
 						echo "<td>".$row['Changes']."</td>";
 						echo "<td>".$row['Description']."</td>";
 						echo "<td>".$row['Occupation']."</td>";
 						echo "</tr>";
 						}
-						mysqli_close($db); 
+						mysqli_close($db);
 					?>
                      </tbody>
 
 
 
 
-                        
+
                     </table>
            <!--                                                     end of your code                   -->
         </div>
@@ -268,4 +268,3 @@ $db = mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb'
 </body>
 
 </html>
-

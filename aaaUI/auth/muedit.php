@@ -10,16 +10,16 @@ $Occupation =filter_input(INPUT_POST,'Occupation');
 $Status= filter_input(INPUT_POST,'Status');
 $empId = filter_input(INPUT_POST, 'EmpId');
 
-$host="den1.mysql5.gear.host";
-$dbusername ="accudb";
-$dbpassword = "Fo4TA64eI~v_";
-$dbname ="accudb";
+$host="den1.mysql2.gear.host";
+$dbusername ="accuaccountingdb";
+$dbpassword = "letmein559!";
+$dbname ="accuaccountingdb";
 
 // Create connection
 $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
 
 if(mysqli_connect_error()){
-	die('Connect Error('. mysqli_connect_errno().')'.mysqli_connect_error()); 
+	die('Connect Error('. mysqli_connect_errno().')'.mysqli_connect_error());
 }
 else{
 	$sql = "UPDATE registeruser SET  firstName='$firstName',lastName='$lastName',email='$email',Password='$Password',Occupation='$Occupation', Status='$Status' WHERE EmployeeID=$empId";

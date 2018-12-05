@@ -14,15 +14,15 @@ if(!empty($AcctNumber)){
 if(!empty($AcctName)){
 
 
-    
+
 // Create connection
- $conn = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
+ $conn = mysqli_connect("den1.mysql2.gear.host", "accuaccountingdb", "letmein559!", "accuaccountingdb");
 if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
 else{
      $sql = "INSERT INTO `coa`( `AcctNumber`, `AcctName`, `AcctCategory`,`Term`, `NormalSide`,`InitialBalance`, `Balance`) VALUES ('$AcctNumber','$AcctName','$AcctCategory','$AccountTerm','$NormalSide','$InitialBalance','$InitialBalance')";
-	 
+
 	if($conn->query($sql))
     {
         header("Location: chartOfAccounts.php");
@@ -31,21 +31,21 @@ else{
     else{
         echo "Error: ".  $sql ."<br>". $conn->error;
     }
-    
- 
+
+
     $conn->close();
 }
 }
-    
+
 
     else{
         echo"Password should not be Empty";
-    die(); 
+    die();
 }
 }
     else{
         echo"EmployeeID should not be Empty";
-    die(); 
+    die();
 }
 
 

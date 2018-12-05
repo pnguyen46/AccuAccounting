@@ -87,11 +87,11 @@ include '../static/base.php';
                 <!--                                                      Add your code here                                         -->
         <div>
             <?php
-            $host="den1.mysql5.gear.host";
-            $dbusername ="accudb";
-            $dbpassword = "Fo4TA64eI~v_";
-            $dbname ="accudb";
-            $occupation = array('Admin', 'Manager', 'Regular');
+            $host="den1.mysql2.gear.host";
+            $dbusername ="accuaccountingdb";
+            $dbpassword = "letmein559!";
+            $dbname ="accuaccountingdb";
+            $occupation = array('Admin', 'Manager', 'Accountant');
             $status = array('Active', 'Inactive');
 
             // Create connection

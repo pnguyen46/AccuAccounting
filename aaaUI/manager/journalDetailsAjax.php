@@ -1,13 +1,13 @@
 <?php
 
- $link = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
+ $link = mysqli_connect("den1.mysql2.gear.host", "accuaccountingdb", "letmein559!", "accuaccountingdb");
 if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
 
 
 
-     
+
 
 
     $query = "SELECT * FROM `journal` WHERE journalEntryID = " . "'" .$_POST['journalEntryID'] . "'";
@@ -19,22 +19,22 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 	while($row = mysqli_fetch_array($result))
 	{
 
-		        
-				
-			    echo  $row['description'];
-			    
 
-		
-		        
+
+			    echo  $row['description'];
+
+
+
+
 
 
         }
-	    
 
-		
 
-	
-	    
+
+
+
+
 
 
 

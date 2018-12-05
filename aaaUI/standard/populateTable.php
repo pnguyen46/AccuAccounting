@@ -1,13 +1,13 @@
 <?php
 
- $link = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
+ $link = mysqli_connect("den1.mysql2.gear.host", "accuaccountingdb", "letmein559!", "accuaccountingdb");
 if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
 
 
 
-     
+
 
 
     $query = "SELECT * FROM `journalEntries` WHERE account = " . "'" .$_POST['account'] . "'";
@@ -24,9 +24,9 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 		$journalQuery = "SELECT * FROM `journal` WHERE journalEntryID = " ."'" .$row['journalEntryID'] . "'";
 		$resultJournal = mysqli_query($link,$journalQuery);
 		if (!$resultJournal) {die('Invalid query for journal table');}
-		
+
 		while($rowJournal = mysqli_fetch_array($resultJournal)){$journalEntryDate = $rowJournal['targetDate']; $isApproved =$rowJournal['isApproved'];}
-        
+
         if($isApproved == 1){
 	        $coaQuery = "SELECT * FROM `coa` WHERE AcctName = " ."'" .$_POST['account']  . "'";
 			$resultCOA = mysqli_query($link,$coaQuery);
@@ -55,12 +55,12 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
         }
-	    
 
-		
-		
+
+
+
 	}
-	    
+
 
 
 

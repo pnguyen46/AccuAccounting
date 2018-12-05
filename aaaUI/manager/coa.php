@@ -19,18 +19,18 @@ $InitialBalance =filter_input(INPUT_POST,'InitiallBalance');
 if(!empty($AcctNumber)){
 if(!empty($AcctName)){
 
-   
-    $host="den1.mysql5.gear.host";
-    $dbusername ="accudb";
-    $dbpassword = "Fo4TA64eI~v_";
-    $dbname ="accudb";
-    
+
+    $host="den1.mysql2.gear.host";
+    $dbusername ="accuaccountingdb";
+    $dbpassword = "letmein559!";
+    $dbname ="accuaccountingdb";
+
 // Create connection
 $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
 
 if(mysqli_num_rows()){
         die('Connect Error('. mysqli_connect_errno().')'
-    .mysqli_connect_error()); 
+    .mysqli_connect_error());
 }
 else{
 
@@ -47,21 +47,21 @@ else{
     else{
         echo "Error: ".  $sql ."<br>". $conn->error;
     }
-    
- 
+
+
     $conn->close();
 }
 }
-    
+
 
     else{
         echo"Password should not be Empty";
-    die(); 
+    die();
 }
 }
     else{
         echo"EmployeeID should not be Empty";
-    die(); 
+    die();
 }
 
 
