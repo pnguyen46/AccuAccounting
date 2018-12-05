@@ -129,6 +129,8 @@ include 'Employee.php';
                   {
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['Occupation'] = $row['Occupation'];
+										$_SESSION['firstName'] = $row['firstName'];
+										$_SESSION['lastName'] = $row['lastName'];
                     $userType = $_SESSION['Occupation'];
                     return $userType;
                 }
