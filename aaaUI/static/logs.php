@@ -1,45 +1,10 @@
 <?php
-include 'base.php';
+include '../static/base.php';
 ?>
-<html>
-<head>
-
-
-
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<!-- Bootstrap Core CSS -->
-	<link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-	<!-- MetisMenu CSS -->
-	<link href="../../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-	<!-- DataTables CSS -->
-	<link href="../../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-	<!-- DataTables Responsive CSS -->
-	<link href="../../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
-	<!-- Custom CSS -->
-	<link href="../../dist/css/sb-admin-2.css" rel="stylesheet">
-
-	<!-- Custom Fonts -->
-	<link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-
-
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
 		<!--     CHART OF ACCOUNTS TABLE HERE  -->
 		<div id="page-wrapper">
 			<div class="row">
@@ -52,6 +17,7 @@ include 'base.php';
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="panel panel-default">
+						<script type="text/javascript" src="../../js/sb-admin-2.js"></script>
 						<div class="panel-body">
 							<table width="100%" class="table table-striped  table-hover" id="chart-of-accounts-table">
 								<thead>
@@ -65,7 +31,7 @@ include 'base.php';
 									<?php
 
 
-                     $occupation = array('Admin', 'Manager', 'Accountant');
+                     $occupation = array('Admin', 'Manager', 'Regular');
 										 $status = array('Active', 'Inactive');
                        $sql = 'SELECT `jecl`.user, `je`.journalEntryID, `je`.account, `je`.debits as newDebits, `je`.credits as newCredits, `je`.accountBalanceBefore as newAccountBalanceBefore, '.
 											  			'`je`.accountBalanceAfter as newAccountBalanceAfter, `jecl`.debits as oldDebits, `jecl`.credits as oldCredits, `jecl`.accountBalanceBefore as oldAccountBalanceBefore, '.
@@ -83,7 +49,6 @@ include 'base.php';
                               echo "<td>Debits<br>Credits<br>AccountBalanceBefore<br>AccountBalanceAfter</td>";
                               echo "<td>" . $row['oldDebits'] . "<br>" . $row['oldCredits'] . "<br>" . $row['oldAccountBalanceBefore'] . "<br>" . $row['oldAccountBalanceAfter'] . "</td>";
                               echo "<td>" . $row['newDebits'] . "<br>" . $row['newCredits'] . "<br>" . $row['newAccountBalanceBefore'] . "<br>" . $row['newAccountBalanceAfter'] . "</td>";
-                              echo "<td>" . $row['user'] . "</td>";
 															echo "<td>" . $row['datestamp'] . "</td>";
 														echo"</tr>";
                           }
@@ -100,7 +65,6 @@ include 'base.php';
 														echo "<td>Term<br>NormalSide<br>Balance</td>";
 														echo "<td>" . $row['OldTerm'] . "<br>" . $row['OldNormalSide'] . "<br>" . $row['OldBalance'] . "</td>";
 														echo "<td>" . $row['NewTerm'] . "<br>" . $row['NewNormalSide'] . "<br>" . $row['NewBalance'] . "</td>";
-														echo "<td>" . $row['User'] . "</td>";
 														echo "<td>" . $row['datestamp'] . "</td>";
 													echo"</tr>";
 												}
@@ -135,5 +99,15 @@ include 'base.php';
 
 						</div>
 					</div>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+
+</body>
 
 </html>
