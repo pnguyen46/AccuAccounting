@@ -13,7 +13,7 @@ include 'Employee.php';
 
 		public function __construct()
 		{
-			$this->conn =  mysqli_connect('den1.mysql5.gear.host', 'accudb', 'Fo4TA64eI~v_', 'accudb');
+			$this->conn =  mysqli_connect('den1.mysql2.gear.host', 'accuaccountingdb', 'letmein559!', 'accuaccountingdb');
 			//$session = session_start();
 
 			//echo'OK';
@@ -85,7 +85,7 @@ include 'Employee.php';
 				header('Location: ../Manager/chartOfAccounts.php');
 				exit();
 			}
-			else if($result -> getUserType($username, $password) == 'Regular')
+			else if($result -> getUserType($username, $password) == 'Accountant')
 			{
 				session_start();
 				header('Location: ../standard/chartOfAccounts.php');

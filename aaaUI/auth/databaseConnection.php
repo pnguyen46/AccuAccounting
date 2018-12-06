@@ -1,12 +1,12 @@
-<?php 
+<?php
 	include "Configuration.php";
 
   	$object = new Configuration;
 
-  	$object -> setHostName('den1.mysql5.gear.host');
-  	$object -> setHostUserName('accudb');
-  	$object -> setHostPassword('Fo4TA64eI~v_');
-  	$object -> setDatabaseName('accudb');
+  	$object -> setHostName('den1.mysql2.gear.host');
+  	$object -> setHostUserName('accuaccountingdb');
+  	$object -> setHostPassword('letmein559!');
+  	$object -> setDatabaseName('accuaccountingdb');
 
   	$serverName = $object -> getHostName();
   	$userName = $object->getHostUserName();

@@ -1,6 +1,6 @@
 <?php
 
- $link = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
+ $link = mysqli_connect("den1.mysql2.gear.host", "accuaccountingdb", "letmein559!", "accuaccountingdb");
 if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 
 
@@ -11,20 +11,20 @@ if($link === false){die("ERROR: Could not connect. " . mysqli_connect_error());}
 	}
 	while($row = mysqli_fetch_array($result))
 	{
-		
+
 	echo"<tr>";
     echo "<td style='font-weight: bold;'>Total Balance: </td>";
     echo "<td style='font-weight: bold;'>$" . $row['Balance'] . "</td>";
     echo"</tr>";
 
-			
-        }
-	    
 
-		
-		
-	
-	    
+        }
+
+
+
+
+
+
 
 
 

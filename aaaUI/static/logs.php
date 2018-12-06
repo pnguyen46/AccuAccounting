@@ -49,7 +49,6 @@ include '../static/base.php';
                               echo "<td>Debits<br>Credits<br>AccountBalanceBefore<br>AccountBalanceAfter</td>";
                               echo "<td>" . $row['oldDebits'] . "<br>" . $row['oldCredits'] . "<br>" . $row['oldAccountBalanceBefore'] . "<br>" . $row['oldAccountBalanceAfter'] . "</td>";
                               echo "<td>" . $row['newDebits'] . "<br>" . $row['newCredits'] . "<br>" . $row['newAccountBalanceBefore'] . "<br>" . $row['newAccountBalanceAfter'] . "</td>";
-                              echo "<td>" . $row['user'] . "</td>";
 															echo "<td>" . $row['datestamp'] . "</td>";
 														echo"</tr>";
                           }
@@ -66,7 +65,6 @@ include '../static/base.php';
 														echo "<td>Term<br>NormalSide<br>Balance</td>";
 														echo "<td>" . $row['OldTerm'] . "<br>" . $row['OldNormalSide'] . "<br>" . $row['OldBalance'] . "</td>";
 														echo "<td>" . $row['NewTerm'] . "<br>" . $row['NewNormalSide'] . "<br>" . $row['NewBalance'] . "</td>";
-														echo "<td>" . $row['User'] . "</td>";
 														echo "<td>" . $row['datestamp'] . "</td>";
 													echo"</tr>";
 												}

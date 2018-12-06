@@ -266,7 +266,7 @@ include '../static/base.php';
 
 
                                                         // Create connection
-                                                        $conn = new mysqli('den1.mysql1.gear.host', 'accudb', 'Fi9A-342?v5W', 'accudb');
+                                                        $conn = new mysqli('den1.mysql2.gear.host', 'accuaccountingdb', 'letmein559!', 'accuaccountingdb');
                                                         // Check connection
                                                         if ($conn->connect_error) {
                                                             die("Connection failed: " . $conn->connect_error);

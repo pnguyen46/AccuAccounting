@@ -145,7 +145,7 @@ include "../auth/databaseConnection.php";
                     </li>
                 </ul>
             <?php } ?>
-          <?php if($_SESSION['Occupation']=='Regular'){?>
+          <?php if($_SESSION['Occupation']=='Accountant'){?>
                 <ul class="nav" id="side-menu">
                   <li>
                       <a href="../static/home.php"><i class="fa fa-home fa-fw"></i>Home</a>

@@ -2,7 +2,7 @@
 session_start();
 $_SESSION['message']= '';
 
-$mysqli = new mysqli('localhost', 'root', '', 'aaadb');
+$mysqli = new mysqli('den1.mysql2.gear.host', 'accuaccountingdb', 'letmein559!', 'accuaccountingdb');
 $errPsw = 0;
 $errNodb = 0;
 
@@ -19,8 +19,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
       VALUES ('$Email','$FirstName','$LastName','$password')";
 
       if ($mysqli->query($sql) == true) {
-        $_SESSION['message'] = "Registration successful! Account has been added, thank you!";
-        header("Location: login.php");
+        header("Location: regsuccess.php");
         exit();
       }
       else {

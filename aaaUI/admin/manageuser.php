@@ -86,7 +86,7 @@ include '../static/base.php';
 														<select id="Occupation" name="Occupation">
 															 <option>Admin</option>
 															 <option>Manager</option>
-															 <option>Regular</option>
+															 <option>Accountant</option>
 														</select>
 													</li>
 												</div>
@@ -116,7 +116,7 @@ include '../static/base.php';
 									<?php
 
 
-                                   $occupation = array('Admin', 'Manager', 'Regular');
+                                   $occupation = array('Admin', 'Manager', 'Accountant');
 									$status = array('Active', 'Inactive');
                                      $sql = "SELECT * FROM registeruser";
                                      $result = mysqli_query($conn, $sql);

@@ -16,10 +16,10 @@ $Status= filter_input(INPUT_POST,'Status');
 
 
 
-        $host="den1.mysql5.gear.host";
-        $dbusername ="accudb";
-        $dbpassword = "Fo4TA64eI~v_";
-        $dbname ="accudb";
+        $host="den1.mysql2.gear.host";
+        $dbusername ="accuaccountingdb";
+        $dbpassword = "letmein559!";
+        $dbname ="accuaccountingdb";
 
 // Create connection
        $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);

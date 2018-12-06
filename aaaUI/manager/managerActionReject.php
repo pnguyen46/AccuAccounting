@@ -4,8 +4,8 @@
 server with default setting (user 'root' with no password) */
 
 //require('config.php'); // CONNECTION to Database
-$link = mysqli_connect("den1.mysql5.gear.host", "accudb", "Fo4TA64eI~v_", "accudb");
- 
+$link = mysqli_connect("den1.mysql2.gear.host", "accuaccountingdb", "letmein559!", "accuaccountingdb");
+
 $changes = 'Rejected Journal Entry';
 $occupation = 'Manager';
 // Check connection
@@ -14,13 +14,13 @@ if($link === false){
 }
 
 
- /* ----------    Update Journal and set journal entry status to approved         -----------                                  */       
+ /* ----------    Update Journal and set journal entry status to approved         -----------                                  */
          $sql_journal = "Update Journal SET isApproved = ?, comments = ? WHERE journalEntryID = ?";
 
                 if($stmt_journal = mysqli_prepare($link, $sql_journal))
                 {
                     mysqli_stmt_bind_param($stmt_journal, "iss",$isApproved, $comments, $journalEntryID);
-                    
+
                     $journalEntryID = $_POST['journalEntryID'];
                     $comments =  $_POST['comment'];
                     $isApproved = 3;
@@ -30,7 +30,7 @@ if($link === false){
                         {
 							mysqli_stmt_execute($output);
 
-                        } 
+                        }
                      else{
                         echo "ERROR: Could not execute query: $sql_journal. " . mysqli_error($link);
                          }
