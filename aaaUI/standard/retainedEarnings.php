@@ -268,7 +268,7 @@ include '../static/base.php';
                 function (dispose) {
                     // dispose: object with X, Y of the last line add to the PDF
                     //          this allow the insertion of new lines after html
-                    pdf.save('Trial Balance.pdf');
+                    pdf.save('Statement of Retained Earnings.pdf');
                 }, margins);
         }
 
