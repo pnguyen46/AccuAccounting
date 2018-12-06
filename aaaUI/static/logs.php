@@ -81,7 +81,6 @@ include '../static/base.php';
 													echo "<td>Email<br>FirstName<br>LastName<br>Occupation</td>";
 													echo "<td>" . $row['oldEmail'] . "<br>" . $row['oldFirstName'] . "<br>" . $row['oldLastName'] . "<br>" . $row['oldOccupation'] . "</td>";
 													echo "<td>" . $row['newEmail'] . "<br>" . $row['newFirstName'] . "<br>" . $row['newLastName'] . "<br>" . $row['newOccupation'] . "</td>";
-													echo "<td></td>";
 													echo "<td>" . $row['datestamp'] . "</td>";
 												echo"</tr>";
 											}
